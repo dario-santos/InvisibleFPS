@@ -1,6 +1,6 @@
 ﻿using Unity.FPS.Game;
 using UnityEngine;
-
+using UnityEngine.InputSystem;
 
 namespace Unity.FPS.Gameplay
 {
@@ -34,38 +34,8 @@ namespace Unity.FPS.Gameplay
         private bool isCrouchPressed;
         private bool isSprintPressed;
 
-
         private Vector3 playerMovementAmmount;
         private Vector2 cameraMovementAmmount;
-
-        private void Awake()
-        {
-            controls = new PlayerControllerInput();
-
-            // Fire
-            controls.PlayerController.Fire.started  += _ => isFirePressed = true;
-            controls.PlayerController.Fire.canceled += _ => isFirePressed = false;
-
-            // Fire
-            controls.PlayerController.Aim.started += _ => isAimPressed = true;
-            controls.PlayerController.Aim.canceled += _ => isAimPressed = false;
-
-            // Jump
-            controls.PlayerController.Jump.started  += _ => isJumpPressed = true;
-            controls.PlayerController.Jump.canceled += _ => isJumpPressed = false;
-
-            // Crouch
-            controls.PlayerController.Crouch.started  += _ => isCrouchPressed = true;
-            controls.PlayerController.Crouch.canceled += _ => isCrouchPressed = false;
-
-            // PlayerMovement
-            controls.PlayerController.PlayerMovement.performed += ctx => MovePlayer(ctx.ReadValue<Vector2>());
-            controls.PlayerController.PlayerMovement.canceled  += _ => MovePlayer(Vector2.zero);
-
-            // CameraMovement
-            controls.PlayerController.CameraMovement.performed += ctx => MoveCamera(ctx.ReadValue<Vector2>());
-            controls.PlayerController.CameraMovement.canceled  += _ => MoveCamera(Vector2.zero);
-        }
 
         void Start()
         {
@@ -78,19 +48,35 @@ namespace Unity.FPS.Gameplay
             Cursor.visible = false;
         }
 
-        void MovePlayer(Vector2 playerMovementAmmount) { this.playerMovementAmmount = new Vector3(playerMovementAmmount.x, 0, playerMovementAmmount.y); }
+        public void OnAim(InputAction.CallbackContext ctx)
+        {
+            isAimPressed = ctx.action.triggered;
+        }
+        public void OnCrouch(InputAction.CallbackContext ctx)
+        {
+            isCrouchPressed = ctx.action.triggered;
+        }
 
-        void MoveCamera(Vector2 cameraMovementAmmount) {
+        public void OnFire(InputAction.CallbackContext ctx)
+        {
+            isFirePressed = ctx.action.triggered;
+        }
 
-            float i = cameraMovementAmmount.y;
+        public void OnJump(InputAction.CallbackContext ctx)
+        {
+            isJumpPressed = ctx.action.triggered;
+        }
 
-            // handle inverting vertical input
-            if (InvertYAxis)
-                i *= -1f;
+        public void OnMovePlayer(InputAction.CallbackContext ctx) 
+        {
+            var playerMovementAmmount = ctx.ReadValue<Vector2>();
 
-            // apply sensitivity multiplier
-            // since mouse input is already deltaTime-dependant, only scale input with frame time if it's coming from sticks
-            i *= LookSensitivity * Time.deltaTime;
+            this.playerMovementAmmount = new Vector3(playerMovementAmmount.x, 0, playerMovementAmmount.y); 
+        }
+
+        public void OnMoveCamera(InputAction.CallbackContext ctx)
+        {
+            var cameraMovementAmmount = ctx.ReadValue<Vector2>();
 
             this.cameraMovementAmmount = new Vector2(cameraMovementAmmount.x, cameraMovementAmmount.y); 
         }
@@ -267,16 +253,6 @@ namespace Unity.FPS.Gameplay
             }
 
             return 0;
-        }
-
-        private void OnEnable()
-        {
-            controls.Enable();
-        }
-
-        private void OnDisable()
-        {
-            controls.Disable();
         }
     }
 }
