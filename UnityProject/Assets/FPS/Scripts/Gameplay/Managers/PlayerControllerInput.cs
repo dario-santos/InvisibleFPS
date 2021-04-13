@@ -51,6 +51,30 @@ public class @PlayerControllerInput : IInputActionCollection, IDisposable
                     ""interactions"": """"
                 },
                 {
+                    ""name"": ""ChangeGun2"",
+                    ""type"": ""Button"",
+                    ""id"": ""0d566e6d-2e39-4372-b4d1-3f068e81fba6"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""ChangeGun1"",
+                    ""type"": ""Button"",
+                    ""id"": ""cc9134c6-a4dd-42bb-8a59-fe06d71fb042"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""ChangeGun3"",
+                    ""type"": ""Button"",
+                    ""id"": ""d874436c-7e6a-432f-9e9a-badc7060f354"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
                     ""name"": ""Crouch"",
                     ""type"": ""Button"",
                     ""id"": ""413de8cd-9421-4118-b1b4-ff68f3615d32"",
@@ -99,25 +123,17 @@ public class @PlayerControllerInput : IInputActionCollection, IDisposable
                     ""interactions"": """"
                 },
                 {
-                    ""name"": ""ChangeGun1"",
+                    ""name"": ""Sprint"",
                     ""type"": ""Button"",
-                    ""id"": ""cc9134c6-a4dd-42bb-8a59-fe06d71fb042"",
+                    ""id"": ""606cb1b3-a20f-4735-9ee9-00ebfb293b20"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
                 },
                 {
-                    ""name"": ""ChangeGun2"",
+                    ""name"": ""Reload"",
                     ""type"": ""Button"",
-                    ""id"": ""0d566e6d-2e39-4372-b4d1-3f068e81fba6"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """"
-                },
-                {
-                    ""name"": ""ChangeGun3"",
-                    ""type"": ""Button"",
-                    ""id"": ""d874436c-7e6a-432f-9e9a-badc7060f354"",
+                    ""id"": ""479f9e98-a16a-40ca-9503-97599f54c37d"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
@@ -335,45 +351,23 @@ public class @PlayerControllerInput : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""c0ae9d4b-1d0a-4ea2-889b-061c9ff5b34a"",
-                    ""path"": ""<Keyboard>/1"",
+                    ""id"": ""56ab42ab-9b52-4083-8151-aac90b2905f5"",
+                    ""path"": ""<Keyboard>/shift"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""ChangeGun1"",
+                    ""groups"": ""KeyboardMouse"",
+                    ""action"": ""Sprint"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
-                    ""id"": ""2b3de8fb-5310-4ada-b75b-683fe775dd44"",
-                    ""path"": ""<Keyboard>/numpad1"",
+                    ""id"": ""ca4ae224-70ad-4dc6-9a3b-d7aa707a569e"",
+                    ""path"": ""<Gamepad>/leftStickPress"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""ChangeGun1"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""e8f7c379-2fa1-4db0-a2b2-070725c65ecc"",
-                    ""path"": ""<Keyboard>/2"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""ChangeGun2"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""653fa208-210b-4e6c-b465-2f769fcfd1ea"",
-                    ""path"": ""<Keyboard>/numpad2"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""ChangeGun2"",
+                    ""groups"": ""Controller"",
+                    ""action"": ""Sprint"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -383,7 +377,7 @@ public class @PlayerControllerInput : IInputActionCollection, IDisposable
                     ""path"": ""<Keyboard>/3"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""KeyboardMouse"",
                     ""action"": ""ChangeGun3"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -394,8 +388,74 @@ public class @PlayerControllerInput : IInputActionCollection, IDisposable
                     ""path"": ""<Keyboard>/numpad3"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""KeyboardMouse"",
                     ""action"": ""ChangeGun3"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c0ae9d4b-1d0a-4ea2-889b-061c9ff5b34a"",
+                    ""path"": ""<Keyboard>/1"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KeyboardMouse"",
+                    ""action"": ""ChangeGun1"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2b3de8fb-5310-4ada-b75b-683fe775dd44"",
+                    ""path"": ""<Keyboard>/numpad1"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KeyboardMouse"",
+                    ""action"": ""ChangeGun1"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e8f7c379-2fa1-4db0-a2b2-070725c65ecc"",
+                    ""path"": ""<Keyboard>/2"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KeyboardMouse"",
+                    ""action"": ""ChangeGun2"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""653fa208-210b-4e6c-b465-2f769fcfd1ea"",
+                    ""path"": ""<Keyboard>/numpad2"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KeyboardMouse"",
+                    ""action"": ""ChangeGun2"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""418f63f9-4188-48c0-befa-78606e1cfb4b"",
+                    ""path"": ""<Gamepad>/buttonWest"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Controller"",
+                    ""action"": ""Reload"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""44937015-787d-4434-a8a1-de0cbd044ffb"",
+                    ""path"": ""<Keyboard>/r"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KeyboardMouse"",
+                    ""action"": ""Reload"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -443,15 +503,17 @@ public class @PlayerControllerInput : IInputActionCollection, IDisposable
         m_PlayerController_CameraMovement = m_PlayerController.FindAction("CameraMovement", throwIfNotFound: true);
         m_PlayerController_ChangeGunNext = m_PlayerController.FindAction("ChangeGunNext", throwIfNotFound: true);
         m_PlayerController_ChangeGunPrevious = m_PlayerController.FindAction("ChangeGunPrevious", throwIfNotFound: true);
+        m_PlayerController_ChangeGun2 = m_PlayerController.FindAction("ChangeGun2", throwIfNotFound: true);
+        m_PlayerController_ChangeGun1 = m_PlayerController.FindAction("ChangeGun1", throwIfNotFound: true);
+        m_PlayerController_ChangeGun3 = m_PlayerController.FindAction("ChangeGun3", throwIfNotFound: true);
         m_PlayerController_Crouch = m_PlayerController.FindAction("Crouch", throwIfNotFound: true);
         m_PlayerController_Fire = m_PlayerController.FindAction("Fire", throwIfNotFound: true);
         m_PlayerController_Jump = m_PlayerController.FindAction("Jump", throwIfNotFound: true);
         m_PlayerController_PlayerMovement = m_PlayerController.FindAction("PlayerMovement", throwIfNotFound: true);
         m_PlayerController_CameraMovementMouseX = m_PlayerController.FindAction("CameraMovementMouseX", throwIfNotFound: true);
         m_PlayerController_CameraMovementMouseY = m_PlayerController.FindAction("CameraMovementMouseY", throwIfNotFound: true);
-        m_PlayerController_ChangeGun1 = m_PlayerController.FindAction("ChangeGun1", throwIfNotFound: true);
-        m_PlayerController_ChangeGun2 = m_PlayerController.FindAction("ChangeGun2", throwIfNotFound: true);
-        m_PlayerController_ChangeGun3 = m_PlayerController.FindAction("ChangeGun3", throwIfNotFound: true);
+        m_PlayerController_Sprint = m_PlayerController.FindAction("Sprint", throwIfNotFound: true);
+        m_PlayerController_Reload = m_PlayerController.FindAction("Reload", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -505,15 +567,17 @@ public class @PlayerControllerInput : IInputActionCollection, IDisposable
     private readonly InputAction m_PlayerController_CameraMovement;
     private readonly InputAction m_PlayerController_ChangeGunNext;
     private readonly InputAction m_PlayerController_ChangeGunPrevious;
+    private readonly InputAction m_PlayerController_ChangeGun2;
+    private readonly InputAction m_PlayerController_ChangeGun1;
+    private readonly InputAction m_PlayerController_ChangeGun3;
     private readonly InputAction m_PlayerController_Crouch;
     private readonly InputAction m_PlayerController_Fire;
     private readonly InputAction m_PlayerController_Jump;
     private readonly InputAction m_PlayerController_PlayerMovement;
     private readonly InputAction m_PlayerController_CameraMovementMouseX;
     private readonly InputAction m_PlayerController_CameraMovementMouseY;
-    private readonly InputAction m_PlayerController_ChangeGun1;
-    private readonly InputAction m_PlayerController_ChangeGun2;
-    private readonly InputAction m_PlayerController_ChangeGun3;
+    private readonly InputAction m_PlayerController_Sprint;
+    private readonly InputAction m_PlayerController_Reload;
     public struct PlayerControllerActions
     {
         private @PlayerControllerInput m_Wrapper;
@@ -522,15 +586,17 @@ public class @PlayerControllerInput : IInputActionCollection, IDisposable
         public InputAction @CameraMovement => m_Wrapper.m_PlayerController_CameraMovement;
         public InputAction @ChangeGunNext => m_Wrapper.m_PlayerController_ChangeGunNext;
         public InputAction @ChangeGunPrevious => m_Wrapper.m_PlayerController_ChangeGunPrevious;
+        public InputAction @ChangeGun2 => m_Wrapper.m_PlayerController_ChangeGun2;
+        public InputAction @ChangeGun1 => m_Wrapper.m_PlayerController_ChangeGun1;
+        public InputAction @ChangeGun3 => m_Wrapper.m_PlayerController_ChangeGun3;
         public InputAction @Crouch => m_Wrapper.m_PlayerController_Crouch;
         public InputAction @Fire => m_Wrapper.m_PlayerController_Fire;
         public InputAction @Jump => m_Wrapper.m_PlayerController_Jump;
         public InputAction @PlayerMovement => m_Wrapper.m_PlayerController_PlayerMovement;
         public InputAction @CameraMovementMouseX => m_Wrapper.m_PlayerController_CameraMovementMouseX;
         public InputAction @CameraMovementMouseY => m_Wrapper.m_PlayerController_CameraMovementMouseY;
-        public InputAction @ChangeGun1 => m_Wrapper.m_PlayerController_ChangeGun1;
-        public InputAction @ChangeGun2 => m_Wrapper.m_PlayerController_ChangeGun2;
-        public InputAction @ChangeGun3 => m_Wrapper.m_PlayerController_ChangeGun3;
+        public InputAction @Sprint => m_Wrapper.m_PlayerController_Sprint;
+        public InputAction @Reload => m_Wrapper.m_PlayerController_Reload;
         public InputActionMap Get() { return m_Wrapper.m_PlayerController; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -552,6 +618,15 @@ public class @PlayerControllerInput : IInputActionCollection, IDisposable
                 @ChangeGunPrevious.started -= m_Wrapper.m_PlayerControllerActionsCallbackInterface.OnChangeGunPrevious;
                 @ChangeGunPrevious.performed -= m_Wrapper.m_PlayerControllerActionsCallbackInterface.OnChangeGunPrevious;
                 @ChangeGunPrevious.canceled -= m_Wrapper.m_PlayerControllerActionsCallbackInterface.OnChangeGunPrevious;
+                @ChangeGun2.started -= m_Wrapper.m_PlayerControllerActionsCallbackInterface.OnChangeGun2;
+                @ChangeGun2.performed -= m_Wrapper.m_PlayerControllerActionsCallbackInterface.OnChangeGun2;
+                @ChangeGun2.canceled -= m_Wrapper.m_PlayerControllerActionsCallbackInterface.OnChangeGun2;
+                @ChangeGun1.started -= m_Wrapper.m_PlayerControllerActionsCallbackInterface.OnChangeGun1;
+                @ChangeGun1.performed -= m_Wrapper.m_PlayerControllerActionsCallbackInterface.OnChangeGun1;
+                @ChangeGun1.canceled -= m_Wrapper.m_PlayerControllerActionsCallbackInterface.OnChangeGun1;
+                @ChangeGun3.started -= m_Wrapper.m_PlayerControllerActionsCallbackInterface.OnChangeGun3;
+                @ChangeGun3.performed -= m_Wrapper.m_PlayerControllerActionsCallbackInterface.OnChangeGun3;
+                @ChangeGun3.canceled -= m_Wrapper.m_PlayerControllerActionsCallbackInterface.OnChangeGun3;
                 @Crouch.started -= m_Wrapper.m_PlayerControllerActionsCallbackInterface.OnCrouch;
                 @Crouch.performed -= m_Wrapper.m_PlayerControllerActionsCallbackInterface.OnCrouch;
                 @Crouch.canceled -= m_Wrapper.m_PlayerControllerActionsCallbackInterface.OnCrouch;
@@ -570,15 +645,12 @@ public class @PlayerControllerInput : IInputActionCollection, IDisposable
                 @CameraMovementMouseY.started -= m_Wrapper.m_PlayerControllerActionsCallbackInterface.OnCameraMovementMouseY;
                 @CameraMovementMouseY.performed -= m_Wrapper.m_PlayerControllerActionsCallbackInterface.OnCameraMovementMouseY;
                 @CameraMovementMouseY.canceled -= m_Wrapper.m_PlayerControllerActionsCallbackInterface.OnCameraMovementMouseY;
-                @ChangeGun1.started -= m_Wrapper.m_PlayerControllerActionsCallbackInterface.OnChangeGun1;
-                @ChangeGun1.performed -= m_Wrapper.m_PlayerControllerActionsCallbackInterface.OnChangeGun1;
-                @ChangeGun1.canceled -= m_Wrapper.m_PlayerControllerActionsCallbackInterface.OnChangeGun1;
-                @ChangeGun2.started -= m_Wrapper.m_PlayerControllerActionsCallbackInterface.OnChangeGun2;
-                @ChangeGun2.performed -= m_Wrapper.m_PlayerControllerActionsCallbackInterface.OnChangeGun2;
-                @ChangeGun2.canceled -= m_Wrapper.m_PlayerControllerActionsCallbackInterface.OnChangeGun2;
-                @ChangeGun3.started -= m_Wrapper.m_PlayerControllerActionsCallbackInterface.OnChangeGun3;
-                @ChangeGun3.performed -= m_Wrapper.m_PlayerControllerActionsCallbackInterface.OnChangeGun3;
-                @ChangeGun3.canceled -= m_Wrapper.m_PlayerControllerActionsCallbackInterface.OnChangeGun3;
+                @Sprint.started -= m_Wrapper.m_PlayerControllerActionsCallbackInterface.OnSprint;
+                @Sprint.performed -= m_Wrapper.m_PlayerControllerActionsCallbackInterface.OnSprint;
+                @Sprint.canceled -= m_Wrapper.m_PlayerControllerActionsCallbackInterface.OnSprint;
+                @Reload.started -= m_Wrapper.m_PlayerControllerActionsCallbackInterface.OnReload;
+                @Reload.performed -= m_Wrapper.m_PlayerControllerActionsCallbackInterface.OnReload;
+                @Reload.canceled -= m_Wrapper.m_PlayerControllerActionsCallbackInterface.OnReload;
             }
             m_Wrapper.m_PlayerControllerActionsCallbackInterface = instance;
             if (instance != null)
@@ -595,6 +667,15 @@ public class @PlayerControllerInput : IInputActionCollection, IDisposable
                 @ChangeGunPrevious.started += instance.OnChangeGunPrevious;
                 @ChangeGunPrevious.performed += instance.OnChangeGunPrevious;
                 @ChangeGunPrevious.canceled += instance.OnChangeGunPrevious;
+                @ChangeGun2.started += instance.OnChangeGun2;
+                @ChangeGun2.performed += instance.OnChangeGun2;
+                @ChangeGun2.canceled += instance.OnChangeGun2;
+                @ChangeGun1.started += instance.OnChangeGun1;
+                @ChangeGun1.performed += instance.OnChangeGun1;
+                @ChangeGun1.canceled += instance.OnChangeGun1;
+                @ChangeGun3.started += instance.OnChangeGun3;
+                @ChangeGun3.performed += instance.OnChangeGun3;
+                @ChangeGun3.canceled += instance.OnChangeGun3;
                 @Crouch.started += instance.OnCrouch;
                 @Crouch.performed += instance.OnCrouch;
                 @Crouch.canceled += instance.OnCrouch;
@@ -613,15 +694,12 @@ public class @PlayerControllerInput : IInputActionCollection, IDisposable
                 @CameraMovementMouseY.started += instance.OnCameraMovementMouseY;
                 @CameraMovementMouseY.performed += instance.OnCameraMovementMouseY;
                 @CameraMovementMouseY.canceled += instance.OnCameraMovementMouseY;
-                @ChangeGun1.started += instance.OnChangeGun1;
-                @ChangeGun1.performed += instance.OnChangeGun1;
-                @ChangeGun1.canceled += instance.OnChangeGun1;
-                @ChangeGun2.started += instance.OnChangeGun2;
-                @ChangeGun2.performed += instance.OnChangeGun2;
-                @ChangeGun2.canceled += instance.OnChangeGun2;
-                @ChangeGun3.started += instance.OnChangeGun3;
-                @ChangeGun3.performed += instance.OnChangeGun3;
-                @ChangeGun3.canceled += instance.OnChangeGun3;
+                @Sprint.started += instance.OnSprint;
+                @Sprint.performed += instance.OnSprint;
+                @Sprint.canceled += instance.OnSprint;
+                @Reload.started += instance.OnReload;
+                @Reload.performed += instance.OnReload;
+                @Reload.canceled += instance.OnReload;
             }
         }
     }
@@ -650,14 +728,16 @@ public class @PlayerControllerInput : IInputActionCollection, IDisposable
         void OnCameraMovement(InputAction.CallbackContext context);
         void OnChangeGunNext(InputAction.CallbackContext context);
         void OnChangeGunPrevious(InputAction.CallbackContext context);
+        void OnChangeGun2(InputAction.CallbackContext context);
+        void OnChangeGun1(InputAction.CallbackContext context);
+        void OnChangeGun3(InputAction.CallbackContext context);
         void OnCrouch(InputAction.CallbackContext context);
         void OnFire(InputAction.CallbackContext context);
         void OnJump(InputAction.CallbackContext context);
         void OnPlayerMovement(InputAction.CallbackContext context);
         void OnCameraMovementMouseX(InputAction.CallbackContext context);
         void OnCameraMovementMouseY(InputAction.CallbackContext context);
-        void OnChangeGun1(InputAction.CallbackContext context);
-        void OnChangeGun2(InputAction.CallbackContext context);
-        void OnChangeGun3(InputAction.CallbackContext context);
+        void OnSprint(InputAction.CallbackContext context);
+        void OnReload(InputAction.CallbackContext context);
     }
 }

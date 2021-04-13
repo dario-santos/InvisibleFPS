@@ -973,6 +973,38 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: d874436c-7e6a-432f-9e9a-badc7060f354
     m_ActionName: PlayerController/ChangeGun3[/Keyboard/3,/Keyboard/numpad3]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6145509692674227223}
+        m_TargetAssemblyTypeName: Unity.FPS.Gameplay.PlayerInputHandler, fps.Gameplay
+        m_MethodName: OnSprint
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 606cb1b3-a20f-4735-9ee9-00ebfb293b20
+    m_ActionName: PlayerController/Sprint[/Keyboard/shift,/XInputControllerWindows/leftStickPress]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6145509692674227223}
+        m_TargetAssemblyTypeName: Unity.FPS.Gameplay.PlayerInputHandler, fps.Gameplay
+        m_MethodName: OnReload
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 479f9e98-a16a-40ca-9503-97599f54c37d
+    m_ActionName: PlayerController/Reload[/XInputControllerWindows/buttonWest,/Keyboard/r]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: PlayerController

@@ -32,6 +32,7 @@ namespace Unity.FPS.Gameplay
         private bool isFirePressed;
         private bool isJumpPressed;
         private bool isCrouchPressed;
+        private bool isReloadPressed;
         private bool isSprintPressed;
 
         private bool isChangeGunNext;
@@ -78,10 +79,12 @@ namespace Unity.FPS.Gameplay
         {
             isChangeGunTo1 = ctx.action.triggered;
         }
+
         public void OnChangeGunTo2(InputAction.CallbackContext ctx)
         {
             isChangeGunTo2 = ctx.action.triggered;
         }
+
         public void OnChangeGunTo3(InputAction.CallbackContext ctx)
         {
             isChangeGunTo3 = ctx.action.triggered;
@@ -121,6 +124,15 @@ namespace Unity.FPS.Gameplay
             cameraMovementAmmount = new Vector2(cameraMovementAmmount.x, ctx.ReadValue<float>() * -0.0015f);
         }
 
+        public void OnReload(InputAction.CallbackContext ctx)
+        {
+            isReloadPressed = ctx.action.triggered;
+        }
+
+        public void OnSprint(InputAction.CallbackContext ctx)
+        {
+            isSprintPressed = ctx.action.triggered;
+        }
 
         void LateUpdate()
         {
@@ -129,7 +141,7 @@ namespace Unity.FPS.Gameplay
 
         public bool CanProcessInput()
         {
-            // Todo update to new input system
+            // Todo: update to new input system
             return true; //Cursor.lockState == CursorLockMode.Locked && !m_GameFlowManager.GameIsEnding;
         }
 
@@ -203,7 +215,7 @@ namespace Unity.FPS.Gameplay
             if (CanProcessInput())
             {
                 // Todo:
-                //return Input.GetButton(GameConstants.k_ButtonNameSprint);
+                return isSprintPressed;
             }
 
             return false;
@@ -234,7 +246,7 @@ namespace Unity.FPS.Gameplay
         {
             if (CanProcessInput())
             {
-                //return Input.GetButtonDown(GameConstants.k_ButtonReload);
+                return isReloadPressed;
             }
 
             return false;
