@@ -33,6 +33,8 @@ namespace Unity.FPS.Gameplay
         private bool isJumpPressed;
         private bool isCrouchPressed;
         private bool isSprintPressed;
+        private bool isChangeGunNext;
+        private bool isChangeGunPrevious;
 
         private Vector3 playerMovementAmmount;
         private Vector2 cameraMovementAmmount;
@@ -52,9 +54,20 @@ namespace Unity.FPS.Gameplay
         {
             isAimPressed = ctx.action.triggered;
         }
+
         public void OnCrouch(InputAction.CallbackContext ctx)
         {
             isCrouchPressed = ctx.action.triggered;
+        }
+
+        public void OnChangeGunNext(InputAction.CallbackContext ctx)
+        {
+            isChangeGunNext = ctx.action.triggered;
+        }
+
+        public void OnChangeGunPrevious(InputAction.CallbackContext ctx)
+        {
+            isChangeGunPrevious = ctx.action.triggered;
         }
 
         public void OnFire(InputAction.CallbackContext ctx)
@@ -80,6 +93,8 @@ namespace Unity.FPS.Gameplay
 
             this.cameraMovementAmmount = new Vector2(cameraMovementAmmount.x, cameraMovementAmmount.y); 
         }
+
+        
 
 
         void LateUpdate()
@@ -204,21 +219,10 @@ namespace Unity.FPS.Gameplay
         {
             if (CanProcessInput())
             {
-
-                /*bool isGamepad = Input.GetAxis(GameConstants.k_ButtonNameGamepadSwitchWeapon) != 0f;
-                string axisName = isGamepad
-                    ? GameConstants.k_ButtonNameGamepadSwitchWeapon
-                    : GameConstants.k_ButtonNameSwitchWeapon;
-
-                if (Input.GetAxis(axisName) > 0f)
-                    return -1;
-                else if (Input.GetAxis(axisName) < 0f)
+                if (isChangeGunNext)
                     return 1;
-                else if (Input.GetAxis(GameConstants.k_ButtonNameNextWeapon) > 0f)
+                else if (isChangeGunPrevious)
                     return -1;
-                else if (Input.GetAxis(GameConstants.k_ButtonNameNextWeapon) < 0f)
-                    return 1;
-                */
             }
 
             return 0;

@@ -22,6 +22,22 @@
                     "interactions": ""
                 },
                 {
+                    "name": "ChangeGunNext",
+                    "type": "Button",
+                    "id": "0ce1389e-5970-4bc7-947d-82a7e156e73f",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "ChangeGunPrevious",
+                    "type": "Button",
+                    "id": "618fab0d-4cc2-4498-9023-20aa30c9a773",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
                     "name": "Crouch",
                     "type": "Button",
                     "id": "413de8cd-9421-4118-b1b4-ff68f3615d32",
@@ -217,6 +233,28 @@
                     "processors": "",
                     "groups": "",
                     "action": "CameraMovement",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "84c89a54-1da1-42e7-acef-1c0e91ccf0e2",
+                    "path": "<Gamepad>/dpad/right",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ChangeGunNext",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "9826404f-dde8-4569-8146-dd7f942a5c7a",
+                    "path": "<Gamepad>/dpad/left",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ChangeGunPrevious",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

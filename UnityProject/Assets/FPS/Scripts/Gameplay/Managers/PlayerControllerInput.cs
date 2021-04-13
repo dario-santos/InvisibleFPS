@@ -35,6 +35,22 @@ public class @PlayerControllerInput : IInputActionCollection, IDisposable
                     ""interactions"": """"
                 },
                 {
+                    ""name"": ""ChangeGunNext"",
+                    ""type"": ""Button"",
+                    ""id"": ""0ce1389e-5970-4bc7-947d-82a7e156e73f"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""ChangeGunPrevious"",
+                    ""type"": ""Button"",
+                    ""id"": ""618fab0d-4cc2-4498-9023-20aa30c9a773"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
                     ""name"": ""Crouch"",
                     ""type"": ""Button"",
                     ""id"": ""413de8cd-9421-4118-b1b4-ff68f3615d32"",
@@ -232,6 +248,28 @@ public class @PlayerControllerInput : IInputActionCollection, IDisposable
                     ""action"": ""CameraMovement"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""84c89a54-1da1-42e7-acef-1c0e91ccf0e2"",
+                    ""path"": ""<Gamepad>/dpad/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ChangeGunNext"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""9826404f-dde8-4569-8146-dd7f942a5c7a"",
+                    ""path"": ""<Gamepad>/dpad/left"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ChangeGunPrevious"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -242,6 +280,8 @@ public class @PlayerControllerInput : IInputActionCollection, IDisposable
         m_PlayerController = asset.FindActionMap("PlayerController", throwIfNotFound: true);
         m_PlayerController_Aim = m_PlayerController.FindAction("Aim", throwIfNotFound: true);
         m_PlayerController_CameraMovement = m_PlayerController.FindAction("CameraMovement", throwIfNotFound: true);
+        m_PlayerController_ChangeGunNext = m_PlayerController.FindAction("ChangeGunNext", throwIfNotFound: true);
+        m_PlayerController_ChangeGunPrevious = m_PlayerController.FindAction("ChangeGunPrevious", throwIfNotFound: true);
         m_PlayerController_Crouch = m_PlayerController.FindAction("Crouch", throwIfNotFound: true);
         m_PlayerController_Fire = m_PlayerController.FindAction("Fire", throwIfNotFound: true);
         m_PlayerController_Jump = m_PlayerController.FindAction("Jump", throwIfNotFound: true);
@@ -297,6 +337,8 @@ public class @PlayerControllerInput : IInputActionCollection, IDisposable
     private IPlayerControllerActions m_PlayerControllerActionsCallbackInterface;
     private readonly InputAction m_PlayerController_Aim;
     private readonly InputAction m_PlayerController_CameraMovement;
+    private readonly InputAction m_PlayerController_ChangeGunNext;
+    private readonly InputAction m_PlayerController_ChangeGunPrevious;
     private readonly InputAction m_PlayerController_Crouch;
     private readonly InputAction m_PlayerController_Fire;
     private readonly InputAction m_PlayerController_Jump;
@@ -307,6 +349,8 @@ public class @PlayerControllerInput : IInputActionCollection, IDisposable
         public PlayerControllerActions(@PlayerControllerInput wrapper) { m_Wrapper = wrapper; }
         public InputAction @Aim => m_Wrapper.m_PlayerController_Aim;
         public InputAction @CameraMovement => m_Wrapper.m_PlayerController_CameraMovement;
+        public InputAction @ChangeGunNext => m_Wrapper.m_PlayerController_ChangeGunNext;
+        public InputAction @ChangeGunPrevious => m_Wrapper.m_PlayerController_ChangeGunPrevious;
         public InputAction @Crouch => m_Wrapper.m_PlayerController_Crouch;
         public InputAction @Fire => m_Wrapper.m_PlayerController_Fire;
         public InputAction @Jump => m_Wrapper.m_PlayerController_Jump;
@@ -326,6 +370,12 @@ public class @PlayerControllerInput : IInputActionCollection, IDisposable
                 @CameraMovement.started -= m_Wrapper.m_PlayerControllerActionsCallbackInterface.OnCameraMovement;
                 @CameraMovement.performed -= m_Wrapper.m_PlayerControllerActionsCallbackInterface.OnCameraMovement;
                 @CameraMovement.canceled -= m_Wrapper.m_PlayerControllerActionsCallbackInterface.OnCameraMovement;
+                @ChangeGunNext.started -= m_Wrapper.m_PlayerControllerActionsCallbackInterface.OnChangeGunNext;
+                @ChangeGunNext.performed -= m_Wrapper.m_PlayerControllerActionsCallbackInterface.OnChangeGunNext;
+                @ChangeGunNext.canceled -= m_Wrapper.m_PlayerControllerActionsCallbackInterface.OnChangeGunNext;
+                @ChangeGunPrevious.started -= m_Wrapper.m_PlayerControllerActionsCallbackInterface.OnChangeGunPrevious;
+                @ChangeGunPrevious.performed -= m_Wrapper.m_PlayerControllerActionsCallbackInterface.OnChangeGunPrevious;
+                @ChangeGunPrevious.canceled -= m_Wrapper.m_PlayerControllerActionsCallbackInterface.OnChangeGunPrevious;
                 @Crouch.started -= m_Wrapper.m_PlayerControllerActionsCallbackInterface.OnCrouch;
                 @Crouch.performed -= m_Wrapper.m_PlayerControllerActionsCallbackInterface.OnCrouch;
                 @Crouch.canceled -= m_Wrapper.m_PlayerControllerActionsCallbackInterface.OnCrouch;
@@ -348,6 +398,12 @@ public class @PlayerControllerInput : IInputActionCollection, IDisposable
                 @CameraMovement.started += instance.OnCameraMovement;
                 @CameraMovement.performed += instance.OnCameraMovement;
                 @CameraMovement.canceled += instance.OnCameraMovement;
+                @ChangeGunNext.started += instance.OnChangeGunNext;
+                @ChangeGunNext.performed += instance.OnChangeGunNext;
+                @ChangeGunNext.canceled += instance.OnChangeGunNext;
+                @ChangeGunPrevious.started += instance.OnChangeGunPrevious;
+                @ChangeGunPrevious.performed += instance.OnChangeGunPrevious;
+                @ChangeGunPrevious.canceled += instance.OnChangeGunPrevious;
                 @Crouch.started += instance.OnCrouch;
                 @Crouch.performed += instance.OnCrouch;
                 @Crouch.canceled += instance.OnCrouch;
@@ -368,6 +424,8 @@ public class @PlayerControllerInput : IInputActionCollection, IDisposable
     {
         void OnAim(InputAction.CallbackContext context);
         void OnCameraMovement(InputAction.CallbackContext context);
+        void OnChangeGunNext(InputAction.CallbackContext context);
+        void OnChangeGunPrevious(InputAction.CallbackContext context);
         void OnCrouch(InputAction.CallbackContext context);
         void OnFire(InputAction.CallbackContext context);
         void OnJump(InputAction.CallbackContext context);

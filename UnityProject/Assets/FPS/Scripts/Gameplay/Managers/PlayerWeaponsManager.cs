@@ -98,10 +98,10 @@ namespace Unity.FPS.Gameplay
             ActiveWeaponIndex = -1;
             m_WeaponSwitchState = WeaponSwitchState.Down;
 
-            m_InputHandler = GetComponent<PlayerInputHandler>();
+            m_InputHandler = gameObject.GetComponent<PlayerInputHandler>();
             DebugUtility.HandleErrorIfNullGetComponent<PlayerInputHandler, PlayerWeaponsManager>(m_InputHandler, this, gameObject);
 
-            m_PlayerCharacterController = GetComponent<PlayerCharacterController>();
+            m_PlayerCharacterController = gameObject.GetComponent<PlayerCharacterController>();
             DebugUtility.HandleErrorIfNullGetComponent<PlayerCharacterController, PlayerWeaponsManager>(m_PlayerCharacterController, this, gameObject);
 
             SetFov(DefaultFov);
