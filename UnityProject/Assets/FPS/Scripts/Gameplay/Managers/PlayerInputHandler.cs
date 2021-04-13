@@ -33,8 +33,12 @@ namespace Unity.FPS.Gameplay
         private bool isJumpPressed;
         private bool isCrouchPressed;
         private bool isSprintPressed;
+
         private bool isChangeGunNext;
         private bool isChangeGunPrevious;
+        private bool isChangeGunTo1;
+        private bool isChangeGunTo2;
+        private bool isChangeGunTo3;
 
         private Vector3 playerMovementAmmount;
         private Vector2 cameraMovementAmmount;
@@ -70,6 +74,19 @@ namespace Unity.FPS.Gameplay
             isChangeGunPrevious = ctx.action.triggered;
         }
 
+        public void OnChangeGunTo1(InputAction.CallbackContext ctx)
+        {
+            isChangeGunTo1 = ctx.action.triggered;
+        }
+        public void OnChangeGunTo2(InputAction.CallbackContext ctx)
+        {
+            isChangeGunTo2 = ctx.action.triggered;
+        }
+        public void OnChangeGunTo3(InputAction.CallbackContext ctx)
+        {
+            isChangeGunTo3 = ctx.action.triggered;
+        }
+
         public void OnFire(InputAction.CallbackContext ctx)
         {
             isFirePressed = ctx.action.triggered;
@@ -91,17 +108,17 @@ namespace Unity.FPS.Gameplay
         {
             var cameraMovementAmmount = ctx.ReadValue<Vector2>();
 
-            this.cameraMovementAmmount = new Vector2(cameraMovementAmmount.x, cameraMovementAmmount.y); 
+            this.cameraMovementAmmount = new Vector2(cameraMovementAmmount.x * 0.01f, cameraMovementAmmount.y * -0.01f);
         }
 
         public void OnMoveCameraMouseX(InputAction.CallbackContext ctx)
         {
-            cameraMovementAmmount = new Vector2(ctx.ReadValue<float>(), cameraMovementAmmount.y);
+            cameraMovementAmmount = new Vector2(ctx.ReadValue<float>() * 0.0015f, cameraMovementAmmount.y);
         }
 
         public void OnMoveCameraMouseY(InputAction.CallbackContext ctx)
         {
-            cameraMovementAmmount = new Vector2(cameraMovementAmmount.x, ctx.ReadValue<float>());
+            cameraMovementAmmount = new Vector2(cameraMovementAmmount.x, ctx.ReadValue<float>() * -0.0015f);
         }
 
 
@@ -132,10 +149,10 @@ namespace Unity.FPS.Gameplay
         }
 
         public float GetLookInputsHorizontal()
-            => cameraMovementAmmount.x * 0.01f;
+            => cameraMovementAmmount.x;
 
         public float GetLookInputsVertical()
-            => cameraMovementAmmount.y * -0.01f;
+            => cameraMovementAmmount.y;
 
         public bool GetJumpInputDown()
         {
@@ -240,28 +257,14 @@ namespace Unity.FPS.Gameplay
         {
             if (CanProcessInput())
             {
-                /*
-                if (Input.GetKeyDown(KeyCode.Alpha1))
+                if (isChangeGunTo1)
                     return 1;
-                else if (Input.GetKeyDown(KeyCode.Alpha2))
+                else if (isChangeGunTo2)
                     return 2;
-                else if (Input.GetKeyDown(KeyCode.Alpha3))
+                else if (isChangeGunTo3)
                     return 3;
-                else if (Input.GetKeyDown(KeyCode.Alpha4))
-                    return 4;
-                else if (Input.GetKeyDown(KeyCode.Alpha5))
-                    return 5;
-                else if (Input.GetKeyDown(KeyCode.Alpha6))
-                    return 6;
-                else if (Input.GetKeyDown(KeyCode.Alpha7))
-                    return 7;
-                else if (Input.GetKeyDown(KeyCode.Alpha8))
-                    return 8;
-                else if (Input.GetKeyDown(KeyCode.Alpha9))
-                    return 9;
                 else
                     return 0;
-                */
             }
 
             return 0;

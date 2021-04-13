@@ -893,6 +893,86 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 618fab0d-4cc2-4498-9023-20aa30c9a773
     m_ActionName: PlayerController/ChangeGunPrevious[/XInputControllerWindows/dpad/left]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6145509692674227223}
+        m_TargetAssemblyTypeName: Unity.FPS.Gameplay.PlayerInputHandler, fps.Gameplay
+        m_MethodName: OnMoveCameraMouseX
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: e9dd5f84-a39f-4773-b9f4-1e73a80f0f97
+    m_ActionName: PlayerController/CameraMovementMouseX[/Mouse/delta/x]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6145509692674227223}
+        m_TargetAssemblyTypeName: Unity.FPS.Gameplay.PlayerInputHandler, fps.Gameplay
+        m_MethodName: OnMoveCameraMouseY
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 36aa9693-6b34-4292-8bbe-593e92d7b8ff
+    m_ActionName: PlayerController/CameraMovementMouseY[/Mouse/delta/y]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6145509692674227223}
+        m_TargetAssemblyTypeName: Unity.FPS.Gameplay.PlayerInputHandler, fps.Gameplay
+        m_MethodName: OnChangeGunTo1
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: cc9134c6-a4dd-42bb-8a59-fe06d71fb042
+    m_ActionName: PlayerController/ChangeGun1[/Keyboard/1,/Keyboard/numpad1]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6145509692674227223}
+        m_TargetAssemblyTypeName: Unity.FPS.Gameplay.PlayerInputHandler, fps.Gameplay
+        m_MethodName: OnChangeGunTo2
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 0d566e6d-2e39-4372-b4d1-3f068e81fba6
+    m_ActionName: PlayerController/ChangeGun2[/Keyboard/2,/Keyboard/numpad2]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6145509692674227223}
+        m_TargetAssemblyTypeName: Unity.FPS.Gameplay.PlayerInputHandler, fps.Gameplay
+        m_MethodName: OnChangeGunTo3
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: d874436c-7e6a-432f-9e9a-badc7060f354
+    m_ActionName: PlayerController/ChangeGun3[/Keyboard/3,/Keyboard/numpad3]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: PlayerController

@@ -97,6 +97,30 @@ public class @PlayerControllerInput : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Axis"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""ChangeGun1"",
+                    ""type"": ""Button"",
+                    ""id"": ""cc9134c6-a4dd-42bb-8a59-fe06d71fb042"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""ChangeGun2"",
+                    ""type"": ""Button"",
+                    ""id"": ""0d566e6d-2e39-4372-b4d1-3f068e81fba6"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""ChangeGun3"",
+                    ""type"": ""Button"",
+                    ""id"": ""d874436c-7e6a-432f-9e9a-badc7060f354"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -308,6 +332,72 @@ public class @PlayerControllerInput : IInputActionCollection, IDisposable
                     ""action"": ""CameraMovementMouseY"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c0ae9d4b-1d0a-4ea2-889b-061c9ff5b34a"",
+                    ""path"": ""<Keyboard>/1"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ChangeGun1"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2b3de8fb-5310-4ada-b75b-683fe775dd44"",
+                    ""path"": ""<Keyboard>/numpad1"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ChangeGun1"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e8f7c379-2fa1-4db0-a2b2-070725c65ecc"",
+                    ""path"": ""<Keyboard>/2"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ChangeGun2"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""653fa208-210b-4e6c-b465-2f769fcfd1ea"",
+                    ""path"": ""<Keyboard>/numpad2"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ChangeGun2"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""af09b11e-c6b2-4b07-8234-2ba4ab3434a0"",
+                    ""path"": ""<Keyboard>/3"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ChangeGun3"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""009b6d2e-b4f4-4a08-80cb-8351481c3e75"",
+                    ""path"": ""<Keyboard>/numpad3"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ChangeGun3"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -319,12 +409,17 @@ public class @PlayerControllerInput : IInputActionCollection, IDisposable
             ""devices"": [
                 {
                     ""devicePath"": ""<Keyboard>"",
-                    ""isOptional"": true,
+                    ""isOptional"": false,
+                    ""isOR"": false
+                },
+                {
+                    ""devicePath"": ""<Mouse>"",
+                    ""isOptional"": false,
                     ""isOR"": false
                 },
                 {
                     ""devicePath"": ""<VirtualMouse>"",
-                    ""isOptional"": false,
+                    ""isOptional"": true,
                     ""isOR"": false
                 }
             ]
@@ -354,6 +449,9 @@ public class @PlayerControllerInput : IInputActionCollection, IDisposable
         m_PlayerController_PlayerMovement = m_PlayerController.FindAction("PlayerMovement", throwIfNotFound: true);
         m_PlayerController_CameraMovementMouseX = m_PlayerController.FindAction("CameraMovementMouseX", throwIfNotFound: true);
         m_PlayerController_CameraMovementMouseY = m_PlayerController.FindAction("CameraMovementMouseY", throwIfNotFound: true);
+        m_PlayerController_ChangeGun1 = m_PlayerController.FindAction("ChangeGun1", throwIfNotFound: true);
+        m_PlayerController_ChangeGun2 = m_PlayerController.FindAction("ChangeGun2", throwIfNotFound: true);
+        m_PlayerController_ChangeGun3 = m_PlayerController.FindAction("ChangeGun3", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -413,6 +511,9 @@ public class @PlayerControllerInput : IInputActionCollection, IDisposable
     private readonly InputAction m_PlayerController_PlayerMovement;
     private readonly InputAction m_PlayerController_CameraMovementMouseX;
     private readonly InputAction m_PlayerController_CameraMovementMouseY;
+    private readonly InputAction m_PlayerController_ChangeGun1;
+    private readonly InputAction m_PlayerController_ChangeGun2;
+    private readonly InputAction m_PlayerController_ChangeGun3;
     public struct PlayerControllerActions
     {
         private @PlayerControllerInput m_Wrapper;
@@ -427,6 +528,9 @@ public class @PlayerControllerInput : IInputActionCollection, IDisposable
         public InputAction @PlayerMovement => m_Wrapper.m_PlayerController_PlayerMovement;
         public InputAction @CameraMovementMouseX => m_Wrapper.m_PlayerController_CameraMovementMouseX;
         public InputAction @CameraMovementMouseY => m_Wrapper.m_PlayerController_CameraMovementMouseY;
+        public InputAction @ChangeGun1 => m_Wrapper.m_PlayerController_ChangeGun1;
+        public InputAction @ChangeGun2 => m_Wrapper.m_PlayerController_ChangeGun2;
+        public InputAction @ChangeGun3 => m_Wrapper.m_PlayerController_ChangeGun3;
         public InputActionMap Get() { return m_Wrapper.m_PlayerController; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -466,6 +570,15 @@ public class @PlayerControllerInput : IInputActionCollection, IDisposable
                 @CameraMovementMouseY.started -= m_Wrapper.m_PlayerControllerActionsCallbackInterface.OnCameraMovementMouseY;
                 @CameraMovementMouseY.performed -= m_Wrapper.m_PlayerControllerActionsCallbackInterface.OnCameraMovementMouseY;
                 @CameraMovementMouseY.canceled -= m_Wrapper.m_PlayerControllerActionsCallbackInterface.OnCameraMovementMouseY;
+                @ChangeGun1.started -= m_Wrapper.m_PlayerControllerActionsCallbackInterface.OnChangeGun1;
+                @ChangeGun1.performed -= m_Wrapper.m_PlayerControllerActionsCallbackInterface.OnChangeGun1;
+                @ChangeGun1.canceled -= m_Wrapper.m_PlayerControllerActionsCallbackInterface.OnChangeGun1;
+                @ChangeGun2.started -= m_Wrapper.m_PlayerControllerActionsCallbackInterface.OnChangeGun2;
+                @ChangeGun2.performed -= m_Wrapper.m_PlayerControllerActionsCallbackInterface.OnChangeGun2;
+                @ChangeGun2.canceled -= m_Wrapper.m_PlayerControllerActionsCallbackInterface.OnChangeGun2;
+                @ChangeGun3.started -= m_Wrapper.m_PlayerControllerActionsCallbackInterface.OnChangeGun3;
+                @ChangeGun3.performed -= m_Wrapper.m_PlayerControllerActionsCallbackInterface.OnChangeGun3;
+                @ChangeGun3.canceled -= m_Wrapper.m_PlayerControllerActionsCallbackInterface.OnChangeGun3;
             }
             m_Wrapper.m_PlayerControllerActionsCallbackInterface = instance;
             if (instance != null)
@@ -500,6 +613,15 @@ public class @PlayerControllerInput : IInputActionCollection, IDisposable
                 @CameraMovementMouseY.started += instance.OnCameraMovementMouseY;
                 @CameraMovementMouseY.performed += instance.OnCameraMovementMouseY;
                 @CameraMovementMouseY.canceled += instance.OnCameraMovementMouseY;
+                @ChangeGun1.started += instance.OnChangeGun1;
+                @ChangeGun1.performed += instance.OnChangeGun1;
+                @ChangeGun1.canceled += instance.OnChangeGun1;
+                @ChangeGun2.started += instance.OnChangeGun2;
+                @ChangeGun2.performed += instance.OnChangeGun2;
+                @ChangeGun2.canceled += instance.OnChangeGun2;
+                @ChangeGun3.started += instance.OnChangeGun3;
+                @ChangeGun3.performed += instance.OnChangeGun3;
+                @ChangeGun3.canceled += instance.OnChangeGun3;
             }
         }
     }
@@ -534,5 +656,8 @@ public class @PlayerControllerInput : IInputActionCollection, IDisposable
         void OnPlayerMovement(InputAction.CallbackContext context);
         void OnCameraMovementMouseX(InputAction.CallbackContext context);
         void OnCameraMovementMouseY(InputAction.CallbackContext context);
+        void OnChangeGun1(InputAction.CallbackContext context);
+        void OnChangeGun2(InputAction.CallbackContext context);
+        void OnChangeGun3(InputAction.CallbackContext context);
     }
 }
