@@ -94,7 +94,15 @@ namespace Unity.FPS.Gameplay
             this.cameraMovementAmmount = new Vector2(cameraMovementAmmount.x, cameraMovementAmmount.y); 
         }
 
-        
+        public void OnMoveCameraMouseX(InputAction.CallbackContext ctx)
+        {
+            cameraMovementAmmount = new Vector2(ctx.ReadValue<float>(), cameraMovementAmmount.y);
+        }
+
+        public void OnMoveCameraMouseY(InputAction.CallbackContext ctx)
+        {
+            cameraMovementAmmount = new Vector2(cameraMovementAmmount.x, ctx.ReadValue<float>());
+        }
 
 
         void LateUpdate()

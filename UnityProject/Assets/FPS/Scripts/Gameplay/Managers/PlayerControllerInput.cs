@@ -81,6 +81,22 @@ public class @PlayerControllerInput : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Stick"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""CameraMovementMouseX"",
+                    ""type"": ""Value"",
+                    ""id"": ""e9dd5f84-a39f-4773-b9f4-1e73a80f0f97"",
+                    ""expectedControlType"": ""Axis"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""CameraMovementMouseY"",
+                    ""type"": ""Value"",
+                    ""id"": ""36aa9693-6b34-4292-8bbe-593e92d7b8ff"",
+                    ""expectedControlType"": ""Axis"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -90,7 +106,7 @@ public class @PlayerControllerInput : IInputActionCollection, IDisposable
                     ""path"": ""<Gamepad>/rightShoulder"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""Controller"",
                     ""action"": ""Fire"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -101,7 +117,7 @@ public class @PlayerControllerInput : IInputActionCollection, IDisposable
                     ""path"": ""<Mouse>/leftButton"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""KeyboardMouse"",
                     ""action"": ""Fire"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -112,7 +128,7 @@ public class @PlayerControllerInput : IInputActionCollection, IDisposable
                     ""path"": ""<Gamepad>/leftStick"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""Controller"",
                     ""action"": ""PlayerMovement"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -134,7 +150,7 @@ public class @PlayerControllerInput : IInputActionCollection, IDisposable
                     ""path"": ""<Keyboard>/w"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""KeyboardMouse"",
                     ""action"": ""PlayerMovement"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -145,7 +161,7 @@ public class @PlayerControllerInput : IInputActionCollection, IDisposable
                     ""path"": ""<Keyboard>/s"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""KeyboardMouse"",
                     ""action"": ""PlayerMovement"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -156,7 +172,7 @@ public class @PlayerControllerInput : IInputActionCollection, IDisposable
                     ""path"": ""<Keyboard>/a"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""KeyboardMouse"",
                     ""action"": ""PlayerMovement"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -167,7 +183,7 @@ public class @PlayerControllerInput : IInputActionCollection, IDisposable
                     ""path"": ""<Keyboard>/d"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""KeyboardMouse"",
                     ""action"": ""PlayerMovement"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -178,7 +194,7 @@ public class @PlayerControllerInput : IInputActionCollection, IDisposable
                     ""path"": ""<Gamepad>/buttonSouth"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""Controller"",
                     ""action"": ""Jump"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -189,7 +205,7 @@ public class @PlayerControllerInput : IInputActionCollection, IDisposable
                     ""path"": ""<Keyboard>/space"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""KeyboardMouse"",
                     ""action"": ""Jump"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -200,7 +216,7 @@ public class @PlayerControllerInput : IInputActionCollection, IDisposable
                     ""path"": ""<Gamepad>/leftShoulder"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""Controller"",
                     ""action"": ""Aim"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -211,7 +227,7 @@ public class @PlayerControllerInput : IInputActionCollection, IDisposable
                     ""path"": ""<Mouse>/rightButton"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""KeyboardMouse"",
                     ""action"": ""Aim"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -222,7 +238,7 @@ public class @PlayerControllerInput : IInputActionCollection, IDisposable
                     ""path"": ""<Gamepad>/rightStickPress"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""Controller"",
                     ""action"": ""Crouch"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -233,7 +249,7 @@ public class @PlayerControllerInput : IInputActionCollection, IDisposable
                     ""path"": ""<Keyboard>/ctrl"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""KeyboardMouse"",
                     ""action"": ""Crouch"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -244,7 +260,7 @@ public class @PlayerControllerInput : IInputActionCollection, IDisposable
                     ""path"": ""<Gamepad>/rightStick"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""Controller"",
                     ""action"": ""CameraMovement"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -255,7 +271,7 @@ public class @PlayerControllerInput : IInputActionCollection, IDisposable
                     ""path"": ""<Gamepad>/dpad/right"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""Controller"",
                     ""action"": ""ChangeGunNext"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -266,15 +282,65 @@ public class @PlayerControllerInput : IInputActionCollection, IDisposable
                     ""path"": ""<Gamepad>/dpad/left"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""Controller"",
                     ""action"": ""ChangeGunPrevious"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ec39b269-79a0-437f-aea5-53ac89f614c6"",
+                    ""path"": ""<Mouse>/delta/x"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KeyboardMouse"",
+                    ""action"": ""CameraMovementMouseX"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d7764972-fd0c-4071-8d92-f490f8705cdb"",
+                    ""path"": ""<Mouse>/delta/y"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KeyboardMouse"",
+                    ""action"": ""CameraMovementMouseY"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
             ]
         }
     ],
-    ""controlSchemes"": []
+    ""controlSchemes"": [
+        {
+            ""name"": ""KeyboardMouse"",
+            ""bindingGroup"": ""KeyboardMouse"",
+            ""devices"": [
+                {
+                    ""devicePath"": ""<Keyboard>"",
+                    ""isOptional"": true,
+                    ""isOR"": false
+                },
+                {
+                    ""devicePath"": ""<VirtualMouse>"",
+                    ""isOptional"": false,
+                    ""isOR"": false
+                }
+            ]
+        },
+        {
+            ""name"": ""Controller"",
+            ""bindingGroup"": ""Controller"",
+            ""devices"": [
+                {
+                    ""devicePath"": ""<Gamepad>"",
+                    ""isOptional"": false,
+                    ""isOR"": false
+                }
+            ]
+        }
+    ]
 }");
         // PlayerController
         m_PlayerController = asset.FindActionMap("PlayerController", throwIfNotFound: true);
@@ -286,6 +352,8 @@ public class @PlayerControllerInput : IInputActionCollection, IDisposable
         m_PlayerController_Fire = m_PlayerController.FindAction("Fire", throwIfNotFound: true);
         m_PlayerController_Jump = m_PlayerController.FindAction("Jump", throwIfNotFound: true);
         m_PlayerController_PlayerMovement = m_PlayerController.FindAction("PlayerMovement", throwIfNotFound: true);
+        m_PlayerController_CameraMovementMouseX = m_PlayerController.FindAction("CameraMovementMouseX", throwIfNotFound: true);
+        m_PlayerController_CameraMovementMouseY = m_PlayerController.FindAction("CameraMovementMouseY", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -343,6 +411,8 @@ public class @PlayerControllerInput : IInputActionCollection, IDisposable
     private readonly InputAction m_PlayerController_Fire;
     private readonly InputAction m_PlayerController_Jump;
     private readonly InputAction m_PlayerController_PlayerMovement;
+    private readonly InputAction m_PlayerController_CameraMovementMouseX;
+    private readonly InputAction m_PlayerController_CameraMovementMouseY;
     public struct PlayerControllerActions
     {
         private @PlayerControllerInput m_Wrapper;
@@ -355,6 +425,8 @@ public class @PlayerControllerInput : IInputActionCollection, IDisposable
         public InputAction @Fire => m_Wrapper.m_PlayerController_Fire;
         public InputAction @Jump => m_Wrapper.m_PlayerController_Jump;
         public InputAction @PlayerMovement => m_Wrapper.m_PlayerController_PlayerMovement;
+        public InputAction @CameraMovementMouseX => m_Wrapper.m_PlayerController_CameraMovementMouseX;
+        public InputAction @CameraMovementMouseY => m_Wrapper.m_PlayerController_CameraMovementMouseY;
         public InputActionMap Get() { return m_Wrapper.m_PlayerController; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -388,6 +460,12 @@ public class @PlayerControllerInput : IInputActionCollection, IDisposable
                 @PlayerMovement.started -= m_Wrapper.m_PlayerControllerActionsCallbackInterface.OnPlayerMovement;
                 @PlayerMovement.performed -= m_Wrapper.m_PlayerControllerActionsCallbackInterface.OnPlayerMovement;
                 @PlayerMovement.canceled -= m_Wrapper.m_PlayerControllerActionsCallbackInterface.OnPlayerMovement;
+                @CameraMovementMouseX.started -= m_Wrapper.m_PlayerControllerActionsCallbackInterface.OnCameraMovementMouseX;
+                @CameraMovementMouseX.performed -= m_Wrapper.m_PlayerControllerActionsCallbackInterface.OnCameraMovementMouseX;
+                @CameraMovementMouseX.canceled -= m_Wrapper.m_PlayerControllerActionsCallbackInterface.OnCameraMovementMouseX;
+                @CameraMovementMouseY.started -= m_Wrapper.m_PlayerControllerActionsCallbackInterface.OnCameraMovementMouseY;
+                @CameraMovementMouseY.performed -= m_Wrapper.m_PlayerControllerActionsCallbackInterface.OnCameraMovementMouseY;
+                @CameraMovementMouseY.canceled -= m_Wrapper.m_PlayerControllerActionsCallbackInterface.OnCameraMovementMouseY;
             }
             m_Wrapper.m_PlayerControllerActionsCallbackInterface = instance;
             if (instance != null)
@@ -416,10 +494,34 @@ public class @PlayerControllerInput : IInputActionCollection, IDisposable
                 @PlayerMovement.started += instance.OnPlayerMovement;
                 @PlayerMovement.performed += instance.OnPlayerMovement;
                 @PlayerMovement.canceled += instance.OnPlayerMovement;
+                @CameraMovementMouseX.started += instance.OnCameraMovementMouseX;
+                @CameraMovementMouseX.performed += instance.OnCameraMovementMouseX;
+                @CameraMovementMouseX.canceled += instance.OnCameraMovementMouseX;
+                @CameraMovementMouseY.started += instance.OnCameraMovementMouseY;
+                @CameraMovementMouseY.performed += instance.OnCameraMovementMouseY;
+                @CameraMovementMouseY.canceled += instance.OnCameraMovementMouseY;
             }
         }
     }
     public PlayerControllerActions @PlayerController => new PlayerControllerActions(this);
+    private int m_KeyboardMouseSchemeIndex = -1;
+    public InputControlScheme KeyboardMouseScheme
+    {
+        get
+        {
+            if (m_KeyboardMouseSchemeIndex == -1) m_KeyboardMouseSchemeIndex = asset.FindControlSchemeIndex("KeyboardMouse");
+            return asset.controlSchemes[m_KeyboardMouseSchemeIndex];
+        }
+    }
+    private int m_ControllerSchemeIndex = -1;
+    public InputControlScheme ControllerScheme
+    {
+        get
+        {
+            if (m_ControllerSchemeIndex == -1) m_ControllerSchemeIndex = asset.FindControlSchemeIndex("Controller");
+            return asset.controlSchemes[m_ControllerSchemeIndex];
+        }
+    }
     public interface IPlayerControllerActions
     {
         void OnAim(InputAction.CallbackContext context);
@@ -430,5 +532,7 @@ public class @PlayerControllerInput : IInputActionCollection, IDisposable
         void OnFire(InputAction.CallbackContext context);
         void OnJump(InputAction.CallbackContext context);
         void OnPlayerMovement(InputAction.CallbackContext context);
+        void OnCameraMovementMouseX(InputAction.CallbackContext context);
+        void OnCameraMovementMouseY(InputAction.CallbackContext context);
     }
 }
