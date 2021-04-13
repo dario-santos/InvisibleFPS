@@ -7,20 +7,16 @@ namespace Unity.FPS.UI
 {
     public class LoadSceneButton : MonoBehaviour
     {
-        public string SceneName = "";
 
-        void Update()
+        public void OnLoadMenu()
         {
-            if (EventSystem.current.currentSelectedGameObject == gameObject
-                && Input.GetButtonDown(GameConstants.k_ButtonNameSubmit))
-            {
-                LoadTargetScene();
-            }
+            SceneManager.LoadScene("IntroMenu");
         }
 
-        public void LoadTargetScene()
+        public void OnLoadGame()
         {
-            SceneManager.LoadScene(SceneName);
+            SceneManager.LoadScene("MainScene");
         }
+
     }
 }

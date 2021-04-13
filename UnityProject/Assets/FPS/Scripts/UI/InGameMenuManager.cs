@@ -2,6 +2,7 @@
 using Unity.FPS.Gameplay;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 namespace Unity.FPS.UI
@@ -60,14 +61,29 @@ namespace Unity.FPS.UI
             FramerateToggle.onValueChanged.AddListener(OnFramerateCounterChanged);
         }
 
+        private PlayerControllerInput controller;
+        private bool isPauseButtonPressed;
+
+        void Awake() 
+        {
+            controller = new PlayerControllerInput();
+        }
+
+        public void OnPause(InputAction.CallbackContext ctx)
+        {
+            isPauseButtonPressed = ctx.action.triggered;
+        }
+
+
+
         void Update()
         {
             // Lock cursor when clicking outside of menu
-            if (!MenuRoot.activeSelf && Input.GetMouseButtonDown(0))
-            {
-                Cursor.lockState = CursorLockMode.Locked;
-                Cursor.visible = false;
-            }
+            //if (!MenuRoot.activeSelf && Input.GetMouseButtonDown(0))
+            //{
+            //    Cursor.lockState = CursorLockMode.Locked;
+            //    Cursor.visible = false;
+            //}
 
             if (Input.GetKeyDown(KeyCode.Escape))
             {
@@ -75,7 +91,7 @@ namespace Unity.FPS.UI
                 Cursor.visible = true;
             }
 
-            if (Input.GetButtonDown(GameConstants.k_ButtonNamePauseMenu)
+            /*if (Input.GetButtonDown(GameConstants.k_ButtonNamePauseMenu)
                 || (MenuRoot.activeSelf && Input.GetButtonDown(GameConstants.k_ButtonNameCancel)))
             {
                 if (ControlImage.activeSelf)
@@ -95,7 +111,7 @@ namespace Unity.FPS.UI
                     EventSystem.current.SetSelectedGameObject(null);
                     LookSensitivitySlider.Select();
                 }
-            }
+            }*/
         }
 
         public void ClosePauseMenu()

@@ -111,17 +111,23 @@ namespace Unity.FPS.Gameplay
         {
             var cameraMovementAmmount = ctx.ReadValue<Vector2>();
 
-            this.cameraMovementAmmount = new Vector2(cameraMovementAmmount.x * 0.01f, cameraMovementAmmount.y * -0.01f);
+            // Todo: add invert
+            // isToInvert
+            int invert = true ? 1 : -1;
+
+            this.cameraMovementAmmount = new Vector2(cameraMovementAmmount.x * 0.007f, cameraMovementAmmount.y * invert * 0.005f);
         }
 
         public void OnMoveCameraMouseX(InputAction.CallbackContext ctx)
         {
-            cameraMovementAmmount = new Vector2(ctx.ReadValue<float>() * 0.0015f, cameraMovementAmmount.y);
+            cameraMovementAmmount = new Vector2(ctx.ReadValue<float>() * 0.0010f, cameraMovementAmmount.y);
         }
 
         public void OnMoveCameraMouseY(InputAction.CallbackContext ctx)
         {
-            cameraMovementAmmount = new Vector2(cameraMovementAmmount.x, ctx.ReadValue<float>() * -0.0015f);
+            // Todo: add invert
+            // isToInvert
+            cameraMovementAmmount = new Vector2(cameraMovementAmmount.x, ctx.ReadValue<float>() * -0.0010f);
         }
 
         public void OnReload(InputAction.CallbackContext ctx)
