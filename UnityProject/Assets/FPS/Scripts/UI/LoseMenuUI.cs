@@ -1,11 +1,9 @@
-﻿using Unity.FPS.Game;
-using UnityEngine;
-using UnityEngine.EventSystems;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
 namespace Unity.FPS.UI
 {
-    public class LoadSceneButton : MonoBehaviour
+    public class LoseMenuUI : MonoBehaviour
     {
 
         public void OnLoadMenu()
@@ -17,6 +15,5 @@ namespace Unity.FPS.UI
         {
             SceneManager.LoadScene("MainScene");
         }
-
     }
 }
