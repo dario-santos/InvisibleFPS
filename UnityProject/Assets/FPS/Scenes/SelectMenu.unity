@@ -1974,6 +1974,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 283646a0377cafc448470df748497ab3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isRedConnected: {fileID: 11400000, guid: 6adeec2606bc67c4692e86e642ef4867, type: 2}
+  isBlueConnected: {fileID: 11400000, guid: b1bfe6519cb18bf419722ef172db6710, type: 2}
+  isYellowConnected: {fileID: 11400000, guid: 0922c0f530fe916409aef1e220379217, type: 2}
+  isGreenConnected: {fileID: 11400000, guid: 23b8c507cd237434f84bd143c6b224c1, type: 2}
   PlayerRed: {fileID: 934161436}
   PlayerBlue: {fileID: 699968516}
   PlayerYellow: {fileID: 1025334415}
