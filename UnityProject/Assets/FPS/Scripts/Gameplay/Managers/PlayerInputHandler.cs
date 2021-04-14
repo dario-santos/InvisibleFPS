@@ -113,7 +113,7 @@ namespace Unity.FPS.Gameplay
 
             // Todo: add invert
             // isToInvert
-            int invert = true ? 1 : -1;
+            int invert = false ? 1 : -1;
 
             this.cameraMovementAmmount = new Vector2(cameraMovementAmmount.x * 0.007f, cameraMovementAmmount.y * invert * 0.005f);
         }

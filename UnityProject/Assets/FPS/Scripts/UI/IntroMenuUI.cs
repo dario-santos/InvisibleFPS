@@ -16,7 +16,7 @@ namespace Unity.FPS.UI
 
         public void OnLoadGame()
         {
-            SceneManager.LoadScene("MainScene");
+            SceneManager.LoadScene("SelectMenu");
         }
     }
 }

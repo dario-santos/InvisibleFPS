@@ -85,10 +85,10 @@ namespace Unity.FPS.UI
             //    Cursor.visible = false;
             //}
 
-            if (Input.GetKeyDown(KeyCode.Escape))
+            //if (Input.GetKeyDown(KeyCode.Escape))
             {
-                Cursor.lockState = CursorLockMode.None;
-                Cursor.visible = true;
+           //     Cursor.lockState = CursorLockMode.None;
+           //     Cursor.visible = true;
             }
 
             /*if (Input.GetButtonDown(GameConstants.k_ButtonNamePauseMenu)
@@ -139,7 +139,6 @@ namespace Unity.FPS.UI
                 Time.timeScale = 1f;
                 AudioUtility.SetMasterVolume(1);
             }
-
         }
 
         void OnMouseSensitivityChanged(float newValue)
