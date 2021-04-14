@@ -29,6 +29,11 @@ public class ActivatePlayers : MonoBehaviour
     public List<WeaponHUDManager> weaponHUDManagers;
     public List<CrosshairManager> crosshairs;
 
+    [Header("Three Player UI Componentes")]
+    public List<PlayerHealthBar> healthBarsThree;
+    public List<WeaponHUDManager> weaponHUDManagersThree;
+    public List<CrosshairManager> crosshairsThree;
+
     private List<GameObject> players = new List<GameObject>();
 
     private void Awake()
@@ -87,7 +92,19 @@ public class ActivatePlayers : MonoBehaviour
 
     private void SetThreePlayerUI(List<GameObject> players)
     {
-        throw new NotImplementedException();
+        ThreePlayers.SetActive(true);
+
+        for (int i = 0; i < players.Count; i++)
+        {
+            // Get Health
+            healthBarsThree[i].playerHealth = players[i].GetComponent<Health>();
+
+            // Get WeaponsManager
+            weaponHUDManagersThree[i].m_PlayerWeaponsManager = players[i].GetComponent<PlayerWeaponsManager>();
+
+            // Get Crosshairs
+            crosshairsThree[i].m_WeaponsManager = players[i].GetComponent<PlayerWeaponsManager>();
+        }
     }
 
     private void SetFourPlayerUI(List<GameObject> players)
