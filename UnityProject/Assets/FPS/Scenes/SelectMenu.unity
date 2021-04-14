@@ -839,8 +839,7 @@ MonoBehaviour:
       m_Interactions: 
       m_SingletonActionBindings: []
     m_Reference: {fileID: 0}
-  m_PlayerPrefab: {fileID: 1370396236879673432, guid: 52f7d5bc4e99e7d48a09d9a6e30580ad,
-    type: 3}
+  m_PlayerPrefab: {fileID: 677515756}
   m_SplitScreen: 0
   m_MaintainAspectRatioInSplitScreen: 0
   m_FixedNumberOfSplitScreens: -1
@@ -934,6 +933,21 @@ PrefabInstance:
     - target: {fileID: 7765638018684300043, guid: 52f7d5bc4e99e7d48a09d9a6e30580ad,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8367592507482279629, guid: 52f7d5bc4e99e7d48a09d9a6e30580ad,
+        type: 3}
+      propertyPath: m_UIInputModule
+      value: 
+      objectReference: {fileID: 713758925}
+    - target: {fileID: 8367592507482279629, guid: 52f7d5bc4e99e7d48a09d9a6e30580ad,
+        type: 3}
+      propertyPath: m_DefaultActionMap
+      value: e7a7a32f-ca68-4f7e-b42a-4ebf25929048
+      objectReference: {fileID: 0}
+    - target: {fileID: 8367592507482279629, guid: 52f7d5bc4e99e7d48a09d9a6e30580ad,
+        type: 3}
+      propertyPath: m_NeverAutoSwitchControlSchemes
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -1040,6 +1054,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 534609345}
   m_CullTransparentMesh: 1
+--- !u!1 &677515756 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1370396236879673432, guid: 52f7d5bc4e99e7d48a09d9a6e30580ad,
+    type: 3}
+  m_PrefabInstance: {fileID: 510277348}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &699968514
 GameObject:
   m_ObjectHideFlags: 0

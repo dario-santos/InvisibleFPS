@@ -309,8 +309,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 479.99994, y: 270}
-  m_SizeDelta: {x: 2560, y: 1440}
+  m_AnchoredPosition: {x: 239.52995, y: 270}
+  m_SizeDelta: {x: 1277.5, y: 1440}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &1906618057551177008
 Canvas:
@@ -849,8 +849,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 479.99994, y: 270}
-  m_SizeDelta: {x: 2560, y: 1440}
+  m_AnchoredPosition: {x: 239.71997, y: 270}
+  m_SizeDelta: {x: 1278.5, y: 1440}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &5944053531947052719
 Canvas:
@@ -1420,7 +1420,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8159448356143397600}
   - component: {fileID: 1906618057903788940}
-  - component: {fileID: 281517515968458293}
   m_Layer: 5
   m_Name: GameHUDTwoPlayers
   m_TagString: Untagged
@@ -1466,22 +1465,7 @@ MonoBehaviour:
   HealFlashColor: {r: 0.6084906, g: 1, b: 0.95854604, a: 0.5176471}
   HealFlashDuration: 0.2
   HealFlashMaxAlpha: 0.7
---- !u!114 &281517515968458293
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5866582598217589412}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d45ca35e6c74bd74fb22336cb0d508db, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CrosshairImage: {fileID: 1906618058659422447}
-  NullCrosshairSprite: {fileID: 0}
-  CrosshairUpdateshrpness: 5
-  m_WeaponsManager: {fileID: 0}
+  m_PlayerHealth: {fileID: 0}
 --- !u!1 &6028479945748182532
 GameObject:
   m_ObjectHideFlags: 0
@@ -1634,6 +1618,7 @@ GameObject:
   - component: {fileID: 3210446916359246173}
   - component: {fileID: 6076082816488242928}
   - component: {fileID: 1135781455716323946}
+  - component: {fileID: 240964082}
   m_Layer: 5
   m_Name: HUDP1
   m_TagString: Untagged
@@ -1771,6 +1756,30 @@ MonoBehaviour:
   NullCrosshairSprite: {fileID: 0}
   CrosshairUpdateshrpness: 5
   m_WeaponsManager: {fileID: 0}
+--- !u!114 &240964082
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6415624162184126969}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fed84cad6ab9472468348126dddd368a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FlashImage: {fileID: 1906618058344335036}
+  FlashCanvasGroup: {fileID: 8027265498120491233}
+  VignetteCanvasGroup: {fileID: 1686481441064943712}
+  DamageFlashColor: {r: 1, g: 0, b: 0, a: 1}
+  DamageFlashDuration: 0.2
+  DamageFlashMaxAlpha: 0.7
+  CriticaHealthVignetteMaxAlpha: 1
+  PulsatingVignetteFrequency: 8
+  HealFlashColor: {r: 0.60784316, g: 1, b: 0.95686275, a: 0.5176471}
+  HealFlashDuration: 0.2
+  HealFlashMaxAlpha: 0.7
+  m_PlayerHealth: {fileID: 0}
 --- !u!1 &6626973330719089394
 GameObject:
   m_ObjectHideFlags: 0
@@ -1797,7 +1806,7 @@ RectTransform:
   m_GameObject: {fileID: 6626973330719089394}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.75, y: 0.75, z: 1}
   m_Children:
   - {fileID: 3674083932859133630}
   m_Father: {fileID: 6415624162184126972}
@@ -1849,6 +1858,7 @@ GameObject:
   - component: {fileID: 4629861560089455528}
   - component: {fileID: 386857822599374815}
   - component: {fileID: 5310111032211923936}
+  - component: {fileID: 169262325}
   m_Layer: 5
   m_Name: HUDP2
   m_TagString: Untagged
@@ -1986,6 +1996,30 @@ MonoBehaviour:
   NullCrosshairSprite: {fileID: 0}
   CrosshairUpdateshrpness: 5
   m_WeaponsManager: {fileID: 0}
+--- !u!114 &169262325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8393392775374151075}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fed84cad6ab9472468348126dddd368a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FlashImage: {fileID: 6250403912976826534}
+  FlashCanvasGroup: {fileID: 1357664281407356144}
+  VignetteCanvasGroup: {fileID: 902989544616885639}
+  DamageFlashColor: {r: 1, g: 0, b: 0, a: 1}
+  DamageFlashDuration: 0.2
+  DamageFlashMaxAlpha: 0.7
+  CriticaHealthVignetteMaxAlpha: 1
+  PulsatingVignetteFrequency: 8
+  HealFlashColor: {r: 0.60784316, g: 1, b: 0.95686275, a: 0.5176471}
+  HealFlashDuration: 0.2
+  HealFlashMaxAlpha: 0.7
+  m_PlayerHealth: {fileID: 0}
 --- !u!1 &8404514787584611307
 GameObject:
   m_ObjectHideFlags: 0
@@ -2012,7 +2046,7 @@ RectTransform:
   m_GameObject: {fileID: 8404514787584611307}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.75, y: 0.75, z: 1}
   m_Children:
   - {fileID: 7806555375223725880}
   m_Father: {fileID: 6914103102585575306}

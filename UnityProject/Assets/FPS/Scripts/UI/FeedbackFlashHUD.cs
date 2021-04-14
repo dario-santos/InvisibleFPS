@@ -42,20 +42,11 @@ namespace Unity.FPS.UI
 
         bool m_FlashActive;
         float m_LastTimeFlashStarted = Mathf.NegativeInfinity;
-        Health m_PlayerHealth;
+        public Health m_PlayerHealth;
         GameFlowManager m_GameFlowManager;
 
         void Start()
         {
-            // Subscribe to player damage events
-            PlayerCharacterController playerCharacterController = FindObjectOfType<PlayerCharacterController>();
-            DebugUtility.HandleErrorIfNullFindObject<PlayerCharacterController, FeedbackFlashHUD>(
-                playerCharacterController, this);
-
-            m_PlayerHealth = playerCharacterController.GetComponent<Health>();
-            DebugUtility.HandleErrorIfNullGetComponent<Health, FeedbackFlashHUD>(m_PlayerHealth, this,
-                playerCharacterController.gameObject);
-
             m_GameFlowManager = FindObjectOfType<GameFlowManager>();
             DebugUtility.HandleErrorIfNullFindObject<GameFlowManager, FeedbackFlashHUD>(m_GameFlowManager, this);
 

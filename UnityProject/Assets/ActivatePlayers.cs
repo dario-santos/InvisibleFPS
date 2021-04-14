@@ -28,11 +28,14 @@ public class ActivatePlayers : MonoBehaviour
     public List<PlayerHealthBar> healthBars;
     public List<WeaponHUDManager> weaponHUDManagers;
     public List<CrosshairManager> crosshairs;
+    public List<FeedbackFlashHUD> feedbackFlashHUDs;
+
 
     [Header("Three Player UI Componentes")]
     public List<PlayerHealthBar> healthBarsThree;
     public List<WeaponHUDManager> weaponHUDManagersThree;
     public List<CrosshairManager> crosshairsThree;
+    public List<FeedbackFlashHUD> feedbackFlashHUDThree;
 
     private List<GameObject> players = new List<GameObject>();
 
@@ -81,12 +84,13 @@ public class ActivatePlayers : MonoBehaviour
         {
             // Get Health
             healthBars[i].playerHealth = players[i].GetComponent<Health>();
+            feedbackFlashHUDs[i].m_PlayerHealth = players[i].GetComponent<Health>();
 
             // Get WeaponsManager
             weaponHUDManagers[i].m_PlayerWeaponsManager = players[i].GetComponent<PlayerWeaponsManager>();
 
             // Get Crosshairs
-            crosshairs[i].m_WeaponsManager= players[i].GetComponent<PlayerWeaponsManager>();
+            crosshairs[i].m_WeaponsManager = players[i].GetComponent<PlayerWeaponsManager>();
         }
     }
 
@@ -98,6 +102,7 @@ public class ActivatePlayers : MonoBehaviour
         {
             // Get Health
             healthBarsThree[i].playerHealth = players[i].GetComponent<Health>();
+            feedbackFlashHUDThree[i].m_PlayerHealth = players[i].GetComponent<Health>();
 
             // Get WeaponsManager
             weaponHUDManagersThree[i].m_PlayerWeaponsManager = players[i].GetComponent<PlayerWeaponsManager>();
