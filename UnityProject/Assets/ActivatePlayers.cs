@@ -46,25 +46,26 @@ public class ActivatePlayers : MonoBehaviour
         if(PlayerInfoRed.playerIndex != -1)
             players.Add(PlayerRed);
 
+
         PlayerBlue.SetActive(PlayerInfoBlue.playerIndex != -1);
         if(PlayerInfoBlue.playerIndex != -1)
             players.Add(PlayerBlue);
 
         PlayerYellow.SetActive(PlayerInfoYellow.playerIndex != -1);
-        if(PlayerInfoYellow.playerIndex != -1)
+        if (PlayerInfoYellow.playerIndex != -1)
             players.Add(PlayerYellow);
         
         PlayerGreen.SetActive(PlayerInfoGreen.playerIndex != -1);
-        if(PlayerInfoGreen.playerIndex != -1)
+        if (PlayerInfoGreen.playerIndex != -1)
             players.Add(PlayerGreen);
 
-
-        switch(players.Count)
+        switch (players.Count)
         {
             case 2:
                 SetTwoPlayerUI(players);
                 break;
             case 3:
+                Debug.Log("Pota");
                 SetThreePlayerUI(players);
                 break;
             case 4:
@@ -109,6 +110,8 @@ public class ActivatePlayers : MonoBehaviour
 
             // Get Crosshairs
             crosshairsThree[i].m_WeaponsManager = players[i].GetComponent<PlayerWeaponsManager>();
+            
+            Debug.Log("Index: "+i);
         }
     }
 

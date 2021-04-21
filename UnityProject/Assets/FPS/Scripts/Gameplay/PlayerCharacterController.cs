@@ -7,13 +7,19 @@ namespace Unity.FPS.Gameplay
     [RequireComponent(typeof(CharacterController), typeof(PlayerInputHandler), typeof(AudioSource))]
     public class PlayerCharacterController : MonoBehaviour
     {
-        [Header("References")] [Tooltip("Reference to the main camera used for the player")]
+        [Header("References")]
+        
+        [Tooltip("Reference to the main camera used for the player")]
         public Camera PlayerCamera;
 
         [Tooltip("Audio source for footsteps, jump, etc...")]
         public AudioSource AudioSource;
 
-        [Header("General")] [Tooltip("Force applied downward when in the air")]
+        public PlayerInfo playerInfo;
+        
+        [Header("General")] 
+        
+        [Tooltip("Force applied downward when in the air")]
         public float GravityDownForce = 20f;
 
         [Tooltip("Physic layers checked to consider the player grounded")]
@@ -22,11 +28,13 @@ namespace Unity.FPS.Gameplay
         [Tooltip("distance from the bottom of the character controller capsule to test for grounded")]
         public float GroundCheckDistance = 0.05f;
 
-        [Header("Movement")] [Tooltip("Max movement speed when grounded (when not sprinting)")]
+
+        [Header("Movement")] 
+        
+        [Tooltip("Max movement speed when grounded (when not sprinting)")]
         public float MaxSpeedOnGround = 10f;
 
-        [Tooltip(
-            "Sharpness for the movement when grounded, a low value will make the player accelerate and decelerate slowly, a high value will do the opposite")]
+        [Tooltip("Sharpness for the movement when grounded, a low value will make the player accelerate and decelerate slowly, a high value will do the opposite")]
         public float MovementSharpnessOnGround = 15;
 
         [Tooltip("Max movement speed when crouching")] [Range(0, 1)]
@@ -44,16 +52,22 @@ namespace Unity.FPS.Gameplay
         [Tooltip("Height at which the player dies instantly when falling off the map")]
         public float KillHeight = -50f;
 
-        [Header("Rotation")] [Tooltip("Rotation speed for moving the camera")]
+        [Header("Rotation")]
+        
+        [Tooltip("Rotation speed for moving the camera")]
         public float RotationSpeed = 200f;
 
         [Range(0.1f, 1f)] [Tooltip("Rotation speed multiplier when aiming")]
         public float AimingRotationMultiplier = 0.4f;
 
-        [Header("Jump")] [Tooltip("Force applied upward when jumping")]
+        [Header("Jump")] 
+        
+        [Tooltip("Force applied upward when jumping")]
         public float JumpForce = 9f;
 
-        [Header("Stance")] [Tooltip("Ratio (0-1) of the character height where the camera will be at")]
+        [Header("Stance")] 
+        
+        [Tooltip("Ratio (0-1) of the character height where the camera will be at")]
         public float CameraHeightRatio = 0.9f;
 
         [Tooltip("Height of character when standing")]
@@ -80,7 +94,9 @@ namespace Unity.FPS.Gameplay
         [Tooltip("Sound played when taking damage froma fall")]
         public AudioClip FallDamageSfx;
 
+
         [Header("Fall Damage")]
+        
         [Tooltip("Whether the player will recieve damage when hitting the ground at high speed")]
         public bool RecievesFallDamage;
 
@@ -106,15 +122,12 @@ namespace Unity.FPS.Gameplay
 
         public float RotationMultiplier
         {
-            get
-            {
-                if (m_WeaponsManager.IsAiming)
-                {
-                    return AimingRotationMultiplier;
-                }
+          get{
+            if(m_WeaponsManager.IsAiming)
+              return AimingRotationMultiplier;
 
-                return 1f;
-            }
+            return 1f;
+          }
         }
 
         Health m_Health;
@@ -218,6 +231,7 @@ namespace Unity.FPS.Gameplay
 
         void OnDie()
         {
+            playerInfo.deaths += 1;
             IsDead = true;
 
             // Tell the weapons manager to switch to a non-existing weapon in order to lower the weapon

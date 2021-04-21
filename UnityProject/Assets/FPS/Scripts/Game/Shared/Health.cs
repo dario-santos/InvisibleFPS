@@ -16,17 +16,22 @@ namespace Unity.FPS.Game
 
         public float CurrentHealth { get; set; }
         public bool Invincible { get; set; }
-        public bool CanPickup() => CurrentHealth < MaxHealth;
-
-        public float GetRatio() => CurrentHealth / MaxHealth;
-        public bool IsCritical() => GetRatio() <= CriticalHealthRatio;
-
+        
         bool m_IsDead;
 
         void Start()
         {
             CurrentHealth = MaxHealth;
         }
+
+        public bool CanPickup()
+            => CurrentHealth < MaxHealth;
+
+        public float GetRatio() 
+            => CurrentHealth / MaxHealth;
+        
+        public bool IsCritical() 
+            => GetRatio() <= CriticalHealthRatio;
 
         public void Heal(float healAmount)
         {
@@ -73,7 +78,7 @@ namespace Unity.FPS.Game
 
         void HandleDeath()
         {
-            if (m_IsDead)
+            if(m_IsDead)
                 return;
 
             // call OnDie action
