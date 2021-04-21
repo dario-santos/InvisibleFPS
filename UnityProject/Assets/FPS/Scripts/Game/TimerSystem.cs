@@ -9,7 +9,6 @@ public class TimerSystem : MonoBehaviour
     [SerializeField] private IntVariable timer;
 
     private float startTimer;
-    private float currentTimer = 0;
 
     private void Start()
     {
@@ -21,6 +20,7 @@ public class TimerSystem : MonoBehaviour
         if((startTimer + timer.value) - Time.time <= 0)
             startTimer = Time.time;
 
+        // Todo: Add timer to UI
         // text.SetText("Time: " + (int)((startTimer + timer.value) - Time.time));
         Debug.Log("Time: " + (int)((startTimer + timer.value) - Time.time));
     }

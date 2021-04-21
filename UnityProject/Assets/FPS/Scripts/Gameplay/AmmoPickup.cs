@@ -6,22 +6,22 @@ namespace Unity.FPS.Gameplay
     public class AmmoPickup : Pickup
     {
         [Tooltip("Weapon those bullets are for")]
-        public WeaponController Weapon;
+        [SerializeField] private WeaponController ammoWeapon;
 
-        [Tooltip("Number of bullets the player gets")]
-        public int BulletCount = 30;
+        [Tooltip("Number of ammo the player gets")]
+        [SerializeField] private int ammoCount = 30;
 
-        protected override void OnPicked(PlayerCharacterController byPlayer)
+        protected override void OnPicked(PlayerCharacterController player)
         {
-            PlayerWeaponsManager playerWeaponsManager = byPlayer.GetComponent<PlayerWeaponsManager>();
+            var playerWeaponsManager = player.GetComponent<PlayerWeaponsManager>();
             if (playerWeaponsManager)
             {
-                WeaponController weapon = playerWeaponsManager.HasWeapon(Weapon);
+                var weapon = playerWeaponsManager.HasWeapon(ammoWeapon);
                 if (weapon != null)
                 {
-                    weapon.AddCarriablePhysicalBullets(BulletCount);
+                    weapon.AddCarriablePhysicalBullets(ammoCount);
 
-                    AmmoPickupEvent evt = Events.AmmoPickupEvent;
+                    var evt = Events.AmmoPickupEvent;
                     evt.Weapon = weapon;
                     EventManager.Broadcast(evt);
 
