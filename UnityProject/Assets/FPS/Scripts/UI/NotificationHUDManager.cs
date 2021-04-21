@@ -15,7 +15,6 @@ namespace Unity.FPS.UI
         void Awake()
         {
             var playerWeaponsManager = FindObjectOfType<PlayerWeaponsManager>();
-            DebugUtility.HandleErrorIfNullFindObject<PlayerWeaponsManager, NotificationHUDManager>(playerWeaponsManager, this);
             playerWeaponsManager.OnAddedWeapon += OnPickupWeapon;
 
             EventManager.AddListener<ObjectiveUpdateEvent>(OnObjectiveUpdateEvent);

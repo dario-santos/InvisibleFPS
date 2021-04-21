@@ -65,7 +65,6 @@ namespace Unity.FPS.Gameplay
             m_SteamVfxEmissionModule = SteamVfx.emission;
 
             m_Weapon = GetComponent<WeaponController>();
-            DebugUtility.HandleErrorIfNullGetComponent<WeaponController, OverheatBehavior>(m_Weapon, this, gameObject);
 
             m_AudioSource = gameObject.AddComponent<AudioSource>();
             m_AudioSource.clip = CoolingCellsSound;

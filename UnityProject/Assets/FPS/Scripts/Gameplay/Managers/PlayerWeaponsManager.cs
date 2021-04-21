@@ -99,10 +99,8 @@ namespace Unity.FPS.Gameplay
             m_WeaponSwitchState = WeaponSwitchState.Down;
 
             m_InputHandler = gameObject.GetComponent<PlayerInputHandler>();
-            DebugUtility.HandleErrorIfNullGetComponent<PlayerInputHandler, PlayerWeaponsManager>(m_InputHandler, this, gameObject);
 
             m_PlayerCharacterController = gameObject.GetComponent<PlayerCharacterController>();
-            DebugUtility.HandleErrorIfNullGetComponent<PlayerCharacterController, PlayerWeaponsManager>(m_PlayerCharacterController, this, gameObject);
 
             SetFov(DefaultFov);
 
@@ -110,9 +108,7 @@ namespace Unity.FPS.Gameplay
 
             // Add starting weapons
             foreach (var weapon in StartingWeapons)
-            {
                 AddWeapon(weapon);
-            }
 
             SwitchWeapon(true);
         }

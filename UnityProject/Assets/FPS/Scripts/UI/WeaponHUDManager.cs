@@ -35,7 +35,6 @@ namespace Unity.FPS.UI
         {
             GameObject ammoCounterInstance = Instantiate(AmmoCounterPrefab, AmmosPanel);
             AmmoCounter newAmmoCounter = ammoCounterInstance.GetComponent<AmmoCounter>();
-            DebugUtility.HandleErrorIfNullGetComponent<AmmoCounter, WeaponHUDManager>(newAmmoCounter, this, ammoCounterInstance.gameObject);
 
             newAmmoCounter.Initialize(newWeapon, weaponIndex);
 

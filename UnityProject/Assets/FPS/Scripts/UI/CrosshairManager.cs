@@ -63,8 +63,6 @@ namespace Unity.FPS.UI
                 m_CrosshairDataDefault = newWeapon.CrosshairDataDefault;
                 m_CrosshairDataTarget = newWeapon.CrosshairDataTargetInSight;
                 m_CrosshairRectTransform = CrosshairImage.GetComponent<RectTransform>();
-                DebugUtility.HandleErrorIfNullGetComponent<RectTransform, CrosshairManager>(m_CrosshairRectTransform,
-                    this, CrosshairImage.gameObject);
             }
             else
             {

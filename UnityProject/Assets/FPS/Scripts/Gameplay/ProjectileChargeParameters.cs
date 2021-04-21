@@ -16,8 +16,6 @@ namespace Unity.FPS.Gameplay
         void OnEnable()
         {
             m_ProjectileBase = GetComponent<ProjectileBase>();
-            DebugUtility.HandleErrorIfNullGetComponent<ProjectileBase, ProjectileChargeParameters>(m_ProjectileBase,
-                this, gameObject);
 
             m_ProjectileBase.OnShoot += OnShoot;
         }
@@ -31,8 +29,7 @@ namespace Unity.FPS.Gameplay
                 proj.Damage = Damage.GetValueFromRatio(m_ProjectileBase.InitialCharge);
                 proj.Radius = Radius.GetValueFromRatio(m_ProjectileBase.InitialCharge);
                 proj.Speed = Speed.GetValueFromRatio(m_ProjectileBase.InitialCharge);
-                proj.GravityDownAcceleration =
-                    GravityDownAcceleration.GetValueFromRatio(m_ProjectileBase.InitialCharge);
+                proj.GravityDownAcceleration = GravityDownAcceleration.GetValueFromRatio(m_ProjectileBase.InitialCharge);
             }
         }
     }
