@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerIndex: 1
   isActive: 0
-  kills: 7
+  kills: 0
   deaths: 0

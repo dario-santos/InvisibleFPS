@@ -42,6 +42,12 @@ public class ActivatePlayers : MonoBehaviour
     private void Awake()
     {
 
+        PlayerInfoRed.kills = 0;    PlayerInfoRed.deaths = 0;
+        PlayerInfoBlue.kills = 0;   PlayerInfoBlue.deaths = 0;
+        PlayerInfoYellow.kills = 0; PlayerInfoYellow.deaths = 0;
+        PlayerInfoGreen.kills = 0;  PlayerInfoGreen.deaths = 0;
+
+
         PlayerRed.SetActive(PlayerInfoRed.playerIndex != -1);
         if(PlayerInfoRed.playerIndex != -1)
             players.Add(PlayerRed);

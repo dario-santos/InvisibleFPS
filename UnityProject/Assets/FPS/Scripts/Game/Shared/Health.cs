@@ -25,6 +25,8 @@ namespace Unity.FPS.Game
         {
             yield return new WaitForSeconds(seconds);
 
+            OnRevive?.Invoke();
+
             CurrentHealth = MaxHealth;
             m_IsDead = false;
         }
@@ -93,15 +95,15 @@ namespace Unity.FPS.Game
 
             // call OnDie action
             if (CurrentHealth <= 0f)
-            {
+            { 
                 m_IsDead = true;
                 OnDie?.Invoke();
+                StartCoroutine(Revive(5));
 
                 if(damageSource != null && damageSource != this.gameObject)
                     damageSource.GetComponent<PlayerContainer>().player.kills++;
             }
 
-            StartCoroutine(Revive(15));
         }
     }
 }

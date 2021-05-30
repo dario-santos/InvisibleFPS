@@ -118,7 +118,7 @@ namespace Unity.FPS.Gameplay
             // isToInvert
             int invert = false ? 1 : -1;
 
-            this.cameraMovementAmmount = new Vector2(cameraMovementAmmount.x * 0.007f, cameraMovementAmmount.y * invert * 0.005f);
+            this.cameraMovementAmmount = new Vector2(cameraMovementAmmount.x * 0.01f, cameraMovementAmmount.y * invert * 0.01f);
         }
 
         public void OnMoveCameraMouseX(InputAction.CallbackContext ctx)
@@ -130,7 +130,7 @@ namespace Unity.FPS.Gameplay
         {
             // Todo: add invert
             // isToInvert
-            cameraMovementAmmount = new Vector2(cameraMovementAmmount.x, ctx.ReadValue<float>() * -0.0010f);
+            cameraMovementAmmount = new Vector2(cameraMovementAmmount.x, ctx.ReadValue<float>() * -0.0040f);
         }
 
         public void OnReload(InputAction.CallbackContext ctx)

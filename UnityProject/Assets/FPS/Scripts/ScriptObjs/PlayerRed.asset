@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5794d3eae2b079d43887679fb09a4495, type: 3}
   m_Name: PlayerRed
   m_EditorClassIdentifier: 
-  playerIndex: 2
+  playerIndex: 0
   isActive: 0
   kills: 0
   deaths: 0
