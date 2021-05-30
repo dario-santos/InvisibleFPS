@@ -1,18 +1,20 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.SceneManagement;
-
 
 namespace Unity.FPS.Game
 {
     public class GameFlowManager : MonoBehaviour
     {
-        [Header("Parameters")] [Tooltip("Duration of the fade-to-black at the end of the game")]
+        [Header("Parameters")] 
+        [Tooltip("Duration of the fade-to-black at the end of the game")]
         public float EndSceneLoadDelay = 3f;
 
         [Tooltip("The canvas group of the fade-to-black screen")]
         public CanvasGroup EndGameFadeCanvasGroup;
 
-        [Header("Win")] [Tooltip("This string has to be the name of the scene you want to load when winning")]
+        [Header("Win")] 
+        [Tooltip("This string has to be the name of the scene you want to load when winning")]
         public string WinSceneName = "WinScene";
 
         [Tooltip("Duration of delay before the fade-to-black, if winning")]
@@ -25,9 +27,15 @@ namespace Unity.FPS.Game
 
         [Tooltip("Sound played on win")] public AudioClip VictorySound;
 
-        [Header("Lose")] [Tooltip("This string has to be the name of the scene you want to load when losing")]
+        [Header("Lose")] 
+        [Tooltip("This string has to be the name of the scene you want to load when losing")]
         public string LoseSceneName = "LoseScene";
 
+        [Header("Timer")]
+        [SerializeField] private IntVariable timer;
+
+        [Header("Players Info")]
+        [SerializeField] private List<PlayerInfo> playersInfo;
 
         public bool GameIsEnding { get; private set; }
 
@@ -46,7 +54,21 @@ namespace Unity.FPS.Game
         }
 
         void Update()
-        {
+        {        
+            // 1 - Has the time ended yet?
+            if(timer.value <= 0 && !GameIsEnding)
+            {
+                // 1.2 - Get the player with the most kills
+                playersInfo.Sort(delegate (PlayerInfo x, PlayerInfo y)
+                {
+                    return x.kills.CompareTo(y.kills);
+                });
+
+                Debug.Log(playersInfo);
+                EndGame(false);
+            }
+
+
             if (GameIsEnding)
             {
                 float timeRatio = 1 - (m_TimeLoadEndGameScene - Time.time) / EndSceneLoadDelay;
@@ -61,6 +83,7 @@ namespace Unity.FPS.Game
                     GameIsEnding = false;
                 }
             }
+
         }
 
         void OnAllObjectivesCompleted(AllObjectivesCompletedEvent evt) => EndGame(true);
