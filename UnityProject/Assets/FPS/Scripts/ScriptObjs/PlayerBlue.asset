@@ -15,4 +15,4 @@ MonoBehaviour:
   playerIndex: 0
   isActive: 0
   kills: 0
-  deaths: 0
+  deaths: 10

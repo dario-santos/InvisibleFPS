@@ -32,6 +32,7 @@ namespace Unity.FPS.Gameplay
         private bool isFirePressed;
         private bool isJumpPressed;
         private bool isCrouchPressed;
+        private bool isCrouchReleased;
         private bool isReloadPressed;
         private bool isSprintPressed;
 
@@ -60,7 +61,8 @@ namespace Unity.FPS.Gameplay
 
         public void OnCrouch(InputAction.CallbackContext ctx)
         {
-            isCrouchPressed = ctx.action.triggered;
+            if(ctx.started)
+                isCrouchPressed = true;
         }
 
         public void OnChangeGunNext(InputAction.CallbackContext ctx)
@@ -229,7 +231,11 @@ namespace Unity.FPS.Gameplay
         {
             if (CanProcessInput())
             {
-                return isCrouchPressed;
+                if (isCrouchPressed)
+                {
+                    isCrouchPressed = false;
+                    return true;
+                }
             }
 
             return false;
@@ -239,8 +245,7 @@ namespace Unity.FPS.Gameplay
         {
             if (CanProcessInput())
             {
-                //Todo:
-                return !isCrouchPressed;
+                return isCrouchReleased;
             }
 
             return false;

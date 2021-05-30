@@ -34,7 +34,10 @@ namespace Unity.FPS.Game
         public bool Win;
     }
 
-    public class PlayerDeathEvent : GameEvent { }
+    public class PlayerDeathEvent : GameEvent 
+    {
+        public PlayerInfo player;
+    }
 
     public class EnemyKillEvent : GameEvent
     {
