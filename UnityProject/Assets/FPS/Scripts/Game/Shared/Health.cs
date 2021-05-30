@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 using UnityEngine.Events;
 
 namespace Unity.FPS.Game
@@ -13,11 +14,20 @@ namespace Unity.FPS.Game
         public UnityAction<float, GameObject> OnDamaged;
         public UnityAction<float> OnHealed;
         public UnityAction OnDie;
+        public UnityAction OnRevive;
 
         public float CurrentHealth { get; set; }
         public bool Invincible { get; set; }
         
         bool m_IsDead;
+
+        private IEnumerator Revive(int seconds)
+        {
+            yield return new WaitForSeconds(seconds);
+
+            CurrentHealth = MaxHealth;
+            m_IsDead = false;
+        }
 
         void Start()
         {
@@ -63,7 +73,7 @@ namespace Unity.FPS.Game
                 OnDamaged?.Invoke(trueDamageAmount, damageSource);
             }
 
-            HandleDeath();
+            HandleDeath(damageSource);
         }
 
         public void Kill()
@@ -73,10 +83,10 @@ namespace Unity.FPS.Game
             // call OnDamage action
             OnDamaged?.Invoke(MaxHealth, null);
 
-            HandleDeath();
+            HandleDeath(null);
         }
 
-        void HandleDeath()
+        void HandleDeath(GameObject damageSource)
         {
             if(m_IsDead)
                 return;
@@ -86,7 +96,12 @@ namespace Unity.FPS.Game
             {
                 m_IsDead = true;
                 OnDie?.Invoke();
+
+                if(damageSource != null && damageSource != this.gameObject)
+                    damageSource.GetComponent<PlayerContainer>().player.kills++;
             }
+
+            StartCoroutine(Revive(15));
         }
     }
 }

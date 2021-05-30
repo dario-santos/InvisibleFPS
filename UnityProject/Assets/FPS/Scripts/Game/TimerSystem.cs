@@ -7,12 +7,14 @@ public class TimerSystem : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI text;
     [SerializeField] private IntVariable timer;
+    [SerializeField] private int RoundTime = 60;
 
     private float startTimer;
     private float initialTimer;
 
     private void Start()
     {
+        timer.value = RoundTime;
         startTimer = Time.time;
         initialTimer = timer.value;
     }

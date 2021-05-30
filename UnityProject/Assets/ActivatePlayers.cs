@@ -65,7 +65,6 @@ public class ActivatePlayers : MonoBehaviour
                 SetTwoPlayerUI(players);
                 break;
             case 3:
-                Debug.Log("Pota");
                 SetThreePlayerUI(players);
                 break;
             case 4:
@@ -110,8 +109,6 @@ public class ActivatePlayers : MonoBehaviour
 
             // Get Crosshairs
             crosshairsThree[i].m_WeaponsManager = players[i].GetComponent<PlayerWeaponsManager>();
-            
-            Debug.Log("Index: "+i);
         }
     }
 

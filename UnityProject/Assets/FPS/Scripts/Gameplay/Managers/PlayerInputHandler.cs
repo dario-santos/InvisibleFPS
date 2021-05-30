@@ -32,6 +32,7 @@ namespace Unity.FPS.Gameplay
         private bool isFirePressed;
         private bool isJumpPressed;
         private bool isCrouchPressed;
+        private bool isCrouchReleased;
         private bool isReloadPressed;
         private bool isSprintPressed;
 
@@ -60,7 +61,8 @@ namespace Unity.FPS.Gameplay
 
         public void OnCrouch(InputAction.CallbackContext ctx)
         {
-            isCrouchPressed = ctx.action.triggered;
+            if(ctx.started)
+                isCrouchPressed = true;
         }
 
         public void OnChangeGunNext(InputAction.CallbackContext ctx)
@@ -102,7 +104,10 @@ namespace Unity.FPS.Gameplay
         {
             var playerMovementAmmount = ctx.ReadValue<Vector2>();
 
-            this.playerMovementAmmount = new Vector3(playerMovementAmmount.x, 0, playerMovementAmmount.y); 
+            this.playerMovementAmmount = new Vector3(playerMovementAmmount.x, 0, playerMovementAmmount.y);
+
+            if (Mathf.Abs(this.playerMovementAmmount.z) <= 0.1)
+                isSprintPressed = false;
         }
 
         public void OnMoveCamera(InputAction.CallbackContext ctx)
@@ -135,17 +140,28 @@ namespace Unity.FPS.Gameplay
 
         public void OnSprint(InputAction.CallbackContext ctx)
         {
-            isSprintPressed = ctx.action.triggered;
+            if(isSprintPressed)
+            {
+                if (Mathf.Abs(playerMovementAmmount.z) >= 0.5)
+                    isSprintPressed = true;
+                else
+                    isSprintPressed = ctx.action.triggered;
+            }
+            else
+            { 
+                isSprintPressed = ctx.action.triggered;
+            }
         }
 
         void LateUpdate()
         {
+            Debug.Log(isSprintPressed);
             m_FireInputWasHeld = GetFireInputHeld();
         }
 
         public bool CanProcessInput()
         {
-            // Todo: update to new input system
+            
             return true; //Cursor.lockState == CursorLockMode.Locked && !m_GameFlowManager.GameIsEnding;
         }
 
@@ -229,7 +245,11 @@ namespace Unity.FPS.Gameplay
         {
             if (CanProcessInput())
             {
-                return isCrouchPressed;
+                if (isCrouchPressed)
+                {
+                    isCrouchPressed = false;
+                    return true;
+                }
             }
 
             return false;
@@ -239,8 +259,7 @@ namespace Unity.FPS.Gameplay
         {
             if (CanProcessInput())
             {
-                //Todo:
-                return !isCrouchPressed;
+                return isCrouchReleased;
             }
 
             return false;

@@ -169,6 +169,7 @@ namespace Unity.FPS.Gameplay
             m_Controller.enableOverlapRecovery = true;
 
             m_Health.OnDie += OnDie;
+            m_Health.OnRevive += OnRevive;
 
             // force the crouch state to false when starting
             SetCrouchingState(false, true);
@@ -229,7 +230,17 @@ namespace Unity.FPS.Gameplay
             // Tell the weapons manager to switch to a non-existing weapon in order to lower the weapon
             m_WeaponsManager.SwitchToWeaponIndex(-1, true);
 
-            EventManager.Broadcast(Events.PlayerDeathEvent);
+
+            // Events.PlayerDeathEvent.player = playerInfo;
+            // EventManager.Broadcast(Events.PlayerDeathEvent);
+            
+        }
+
+        void OnRevive()
+        {
+            IsDead = false;
+
+            m_WeaponsManager.SwitchToWeaponIndex(0, true);
         }
 
         void GroundCheck()
