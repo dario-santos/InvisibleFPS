@@ -88,6 +88,11 @@ namespace Unity.FPS.Game
             HandleDeath(null);
         }
 
+        public PlayerContainer GetPlayer() 
+        {
+            return gameObject.GetComponent<PlayerContainer>();
+        }
+
         void HandleDeath(GameObject damageSource)
         {
             if(m_IsDead)

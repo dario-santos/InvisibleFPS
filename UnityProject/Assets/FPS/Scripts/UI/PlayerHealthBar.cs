@@ -16,6 +16,7 @@ namespace Unity.FPS.UI
         {
             // Update health bar value
             healthFillImage.fillAmount = playerHealth.CurrentHealth / playerHealth.MaxHealth;
+            healthFillImage.color = playerHealth.GetPlayer().player.color;
         }
     }
 }

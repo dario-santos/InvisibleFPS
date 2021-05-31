@@ -16,3 +16,4 @@ MonoBehaviour:
   isActive: 0
   kills: 0
   deaths: 0
+  color: {r: 0.12156863, g: 0.61960787, b: 0.2509804, a: 1}

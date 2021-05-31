@@ -7,6 +7,7 @@ public class PlayerInfo : ScriptableObject
     public bool isActive = false;
     public int kills = 0;
     public int deaths = 0;
+    public Color color = Color.gray;
 
     public void Reset() 
     {
