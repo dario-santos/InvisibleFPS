@@ -717,7 +717,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2085435223}
         m_TargetAssemblyTypeName: SelectMenuUI, fps.UI
-        m_MethodName: OnLoadLevelOne
+        m_MethodName: OnLoadLevelTwo
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

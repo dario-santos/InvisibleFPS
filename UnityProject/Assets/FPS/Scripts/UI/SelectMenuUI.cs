@@ -106,4 +106,10 @@ public class SelectMenuUI : MonoBehaviour
         isLoadingScene = true;
         SceneManager.LoadScene("MainScene");
     }
+
+    public void OnLoadLevelTwo()
+    {
+        isLoadingScene = true;
+        SceneManager.LoadScene("CTF");
+    }
 }
