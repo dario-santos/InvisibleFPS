@@ -33,9 +33,10 @@ public class SpawnEnemies : MonoBehaviour
             currentWave++;
           
             OnStartWave(timeToStartWave, GetEnemyCount(currentWave));
+            UpdateActiveSpawns(currentWave);
         }
 
-        UpdateActiveSpawns(currentWave);
+        
         
     }
 

@@ -29,4 +29,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/FPS/Scenes/EndGameCTF.unity
     guid: 88a76e6e8778e9642951a7e185e23fcc
+  - enabled: 1
+    path: Assets/FPS/Scenes/WaveScene.unity
+    guid: faa7b3c23d9dccb438add54939f257bb
   m_configObjects: {}

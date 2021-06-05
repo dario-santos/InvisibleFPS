@@ -21,7 +21,7 @@ public class LiveScoreBoard : MonoBehaviour
         // 1 - Sort list
         playerInfos.Sort(delegate (PlayerInfo x, PlayerInfo y)
         {
-            return x.kills.CompareTo(y.kills);
+            return -x.kills.CompareTo(y.kills);
         });
     }
 

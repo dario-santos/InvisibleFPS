@@ -116,6 +116,6 @@ public class SelectMenuUI : MonoBehaviour
     public void OnLoadLevelThree()
     {
         isLoadingScene = true;
-        SceneManager.LoadScene("Waves");
+        SceneManager.LoadScene("WaveScene");
     }
 }

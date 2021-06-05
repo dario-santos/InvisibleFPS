@@ -59,7 +59,6 @@ public class ActivatePlayers : MonoBehaviour
         if(PlayerInfoRed.playerIndex != -1)
             players.Add(PlayerRed);
 
-
         PlayerBlue.SetActive(PlayerInfoBlue.playerIndex != -1);
         if(PlayerInfoBlue.playerIndex != -1)
             players.Add(PlayerBlue);
