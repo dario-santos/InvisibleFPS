@@ -295,7 +295,7 @@ namespace Unity.FPS.AI
             }
         }
 
-        void OnDie()
+        public void OnDie()
         {
             activeEnemies.value--;
 

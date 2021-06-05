@@ -11,5 +11,4 @@ public class WaveUI : MonoBehaviour
 
     private void Update()
         => spawnEnemiesText.text = spawnEnemies.currentWave.ToString();
-
 }
