@@ -155,14 +155,13 @@ namespace Unity.FPS.Gameplay
 
         void LateUpdate()
         {
-            Debug.Log(isSprintPressed);
             m_FireInputWasHeld = GetFireInputHeld();
         }
 
         public bool CanProcessInput()
         {
             
-            return true; //Cursor.lockState == CursorLockMode.Locked && !m_GameFlowManager.GameIsEnding;
+            return true;
         }
 
         public Vector3 GetMoveInput()

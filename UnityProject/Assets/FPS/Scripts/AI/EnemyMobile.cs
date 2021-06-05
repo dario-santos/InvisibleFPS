@@ -44,7 +44,6 @@ namespace Unity.FPS.AI
             m_EnemyController.onAttack += OnAttack;
             m_EnemyController.onDetectedTarget += OnDetectedTarget;
             m_EnemyController.onLostTarget += OnLostTarget;
-            m_EnemyController.SetPathDestinationToClosestNode();
             m_EnemyController.onDamaged += OnDamaged;
 
             // Start patrolling
@@ -89,7 +88,7 @@ namespace Unity.FPS.AI
                     // Transition to follow when no longer a target in attack range
                     if (!m_EnemyController.IsTargetInAttackRange)
                     {
-                        AiState = AIState.Follow;
+                        AiState = AIState.Patrol;
                     }
 
                     break;
@@ -102,7 +101,6 @@ namespace Unity.FPS.AI
             switch (AiState)
             {
                 case AIState.Patrol:
-                    m_EnemyController.UpdatePathDestination();
                     m_EnemyController.SetNavDestination(m_EnemyController.GetDestinationOnPath());
                     break;
                 case AIState.Follow:
@@ -115,7 +113,7 @@ namespace Unity.FPS.AI
                             m_EnemyController.DetectionModule.DetectionSourcePoint.position)
                         >= (AttackStopDistanceRatio * m_EnemyController.DetectionModule.AttackRange))
                     {
-                        m_EnemyController.SetNavDestination(m_EnemyController.KnownDetectedTarget.transform.position);
+                        m_EnemyController.SetNavDestination(transform.position);
                     }
                     else
                     {
