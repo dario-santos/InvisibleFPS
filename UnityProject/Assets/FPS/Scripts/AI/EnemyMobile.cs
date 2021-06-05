@@ -113,7 +113,7 @@ namespace Unity.FPS.AI
                             m_EnemyController.DetectionModule.DetectionSourcePoint.position)
                         >= (AttackStopDistanceRatio * m_EnemyController.DetectionModule.AttackRange))
                     {
-                        m_EnemyController.SetNavDestination(transform.position);
+                        AiState = AIState.Patrol;
                     }
                     else
                     {

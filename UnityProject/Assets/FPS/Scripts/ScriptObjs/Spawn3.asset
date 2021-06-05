@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4bdaf9556231bd04b9d2878e3f6b574f, type: 3}
-  m_Name: Spawn1
+  m_Name: Spawn3
   m_EditorClassIdentifier: 
-  isActive: 1
-  position: {x: 52.43, y: 21.03, z: 218.03}
+  isActive: 0
+  position: {x: 200.78, y: 1.27, z: 347.9}

@@ -112,4 +112,10 @@ public class SelectMenuUI : MonoBehaviour
         isLoadingScene = true;
         SceneManager.LoadScene("CTF");
     }
+
+    public void OnLoadLevelThree()
+    {
+        isLoadingScene = true;
+        SceneManager.LoadScene("Waves");
+    }
 }

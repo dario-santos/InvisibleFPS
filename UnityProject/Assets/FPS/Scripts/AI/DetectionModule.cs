@@ -11,7 +11,7 @@ namespace Unity.FPS.AI
         public Transform DetectionSourcePoint;
 
         [Tooltip("The max distance at which the enemy can see targets")]
-        public float DetectionRange = 20f;
+        public float DetectionRange = 5f;
 
         [Tooltip("The max distance at which the enemy can attack its target")]
         public float AttackRange = 10f;

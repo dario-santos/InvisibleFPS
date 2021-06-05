@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.FPS.AI;
@@ -14,10 +15,57 @@ public class SpawnEnemies : MonoBehaviour
 
     [SerializeField] private IntVariable activeEnemies;
 
+    [SerializeField] private Vector3 destination = new Vector3(150.5f, 10, 250);
+
+    public int currentWave = 0;
+
+    private int nActiveSpawns = 1;
+
+    private void Start()
+    {
+        activeEnemies.value = 0;
+    }
+
     private void Update()
     {
         if (activeEnemies.value <= 0)
-            OnStartWave(timeToStartWave, 5);
+        { 
+            currentWave++;
+          
+            OnStartWave(timeToStartWave, GetEnemyCount(currentWave));
+        }
+
+        UpdateActiveSpawns(currentWave);
+        
+    }
+
+    private void UpdateActiveSpawns(int currentWave)
+    {
+
+        switch (currentWave)
+        {
+            case 5:
+            case 15:
+            case 25:
+            case 40:
+            case 45:
+
+                foreach (var s in spawns)
+                { 
+                    if (!s.isActive)
+                    {
+                        s.isActive = true;
+                        ++nActiveSpawns;
+                        return;
+                    }
+                }
+                break;
+        }
+    }
+
+    private int GetEnemyCount(int currentWave)
+    {
+        return ((currentWave / 10) * 2) + (currentWave % 10);
     }
 
     private IEnumerator Spwan(int timeToStartWave, float seconds, int count)
@@ -38,8 +86,9 @@ public class SpawnEnemies : MonoBehaviour
 
                 // 2.2 Spawn enemy
                 var newEnemy = Instantiate(enemies[0].enemy, s.position, Quaternion.Euler(0, 0, 0));
-                newEnemy.GetComponent<NavMeshAgent>().SetDestination(new Vector3(210, 3, 304));
-                
+                newEnemy.GetComponent<NavMeshAgent>().SetDestination(destination);
+                newEnemy.GetComponent<EnemyController>().destination = destination;
+
             }
 
             yield return new WaitForSeconds(seconds);
@@ -48,7 +97,8 @@ public class SpawnEnemies : MonoBehaviour
 
     public void OnStartWave(int timeToStartWave, int count)
     {
-        activeEnemies.value+=count;
+
+            activeEnemies.value+= (count*nActiveSpawns);
 
         StartCoroutine(Spwan(timeToStartWave, 0.5f, count));
     }

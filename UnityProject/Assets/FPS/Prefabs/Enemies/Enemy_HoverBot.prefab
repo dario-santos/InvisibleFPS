@@ -196,8 +196,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e27364eefd6dd0341ba72a3bfc0d9727, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHealth: 100
+  MaxHealth: 35
   CriticalHealthRatio: 0.3
+  isFriendlyFireActive: 0
 --- !u!195 &7406548990343174644
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -436,9 +437,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DetectionSourcePoint: {fileID: 6571005840976436832}
-  DetectionRange: 20
+  DetectionRange: 5
   AttackRange: 10
-  KnownTargetTimeout: 12
+  KnownTargetTimeout: 2
   Animator: {fileID: 0}
 --- !u!1 &6421371450313891992
 GameObject:
