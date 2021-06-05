@@ -23,4 +23,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/FPS/Scenes/CTF.unity
     guid: 357eea99d881788409ab0d4b8ea767ee
+  - enabled: 1
+    path: Assets/FPS/Scenes/EndGameFFA.unity
+    guid: c5bf36ee47ce5c34baa0fd7cfaf1d7db
+  - enabled: 1
+    path: Assets/FPS/Scenes/EndGameCTF.unity
+    guid: 88a76e6e8778e9642951a7e185e23fcc
   m_configObjects: {}

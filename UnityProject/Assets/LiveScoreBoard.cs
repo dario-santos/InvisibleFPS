@@ -5,14 +5,27 @@ using UnityEngine.UI;
 
 public class LiveScoreBoard : MonoBehaviour
 {
-
     [SerializeField] private List<PlayerInfo> playerInfos;
     [SerializeField] private List<Text> playerKills;
     [SerializeField] private List<Text> playerDeaths;
-    [SerializeField] private bool isCTF = false;
+    [SerializeField] private List<Image> playerBackground;
 
-    // Update is called once per frame
-    void Update()
+    [SerializeField] private bool isCTF = false;
+    [SerializeField] private bool isToOrder = false;
+
+    private void Start()
+    {
+        if (!isToOrder)
+            return;
+
+        // 1 - Sort list
+        playerInfos.Sort(delegate (PlayerInfo x, PlayerInfo y)
+        {
+            return x.kills.CompareTo(y.kills);
+        });
+    }
+
+    private void Update()
     {
         if (isCTF)
         {
@@ -28,6 +41,7 @@ public class LiveScoreBoard : MonoBehaviour
     {
         for (int i = 0; i < playerInfos.Count; i++)
         {
+            playerBackground[i].color = playerInfos[i].color;
             playerKills[i].text = playerInfos[i].kills.ToString();
             playerDeaths[i].text = playerInfos[i].deaths.ToString();
         }
@@ -37,6 +51,7 @@ public class LiveScoreBoard : MonoBehaviour
     {
         for (int i = 0; i < playerInfos.Count; i++)
         {
+            playerBackground[i].color = playerInfos[i].color;
             playerKills[i].text = playerInfos[i].flags.ToString();
             playerDeaths[i].text = playerInfos[i].kills.ToString();
         }

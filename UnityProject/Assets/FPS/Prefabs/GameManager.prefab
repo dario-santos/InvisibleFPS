@@ -203,7 +203,6 @@ GameObject:
   - component: {fileID: 3244674540524639750}
   - component: {fileID: 1065074375515001679}
   - component: {fileID: 4160549848294572208}
-  - component: {fileID: 809993320}
   m_Layer: 5
   m_Name: GameManager
   m_TagString: Untagged
@@ -234,7 +233,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1315839542190839943}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5e1fea5cb3ddbc249bd0181e6766db68, type: 3}
   m_Name: 
@@ -246,7 +245,9 @@ MonoBehaviour:
   WinGameMessage: All objectives completed
   DelayBeforeWinMessage: 2
   VictorySound: {fileID: 8300000, guid: a533219934975884e81c1add37af9930, type: 3}
-  LoseSceneName: LoseScene
+  LoseSceneName: EndGame
+  isCTF: 1
+  timer: {fileID: 11400000, guid: 634ec07cfdefc2b4b87314e2499d2a2b, type: 2}
 --- !u!114 &1315839542190839938
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -394,19 +395,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &809993320
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1315839542190839943}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d2863d79519645b4983cf63dd28847d0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timer: {fileID: 11400000, guid: 634ec07cfdefc2b4b87314e2499d2a2b, type: 2}
 --- !u!1 &2038141326299345668
 GameObject:
   m_ObjectHideFlags: 0
