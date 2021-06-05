@@ -15,6 +15,7 @@ namespace Unity.FPS.Game
         public UnityAction<float> OnHealed;
         public UnityAction OnDie;
         public UnityAction OnRevive;
+        [SerializeField] private bool isFriendlyFireActive = false;
 
         public float CurrentHealth { get; set; }
         public bool Invincible { get; set; }
@@ -63,6 +64,9 @@ namespace Unity.FPS.Game
         {
             if (Invincible)
                 return;
+
+            if (isFriendlyFireActive && damageSource.CompareTag("Player"))
+                    return;
 
             float healthBefore = CurrentHealth;
             CurrentHealth -= damage;
