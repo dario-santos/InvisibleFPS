@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Events;
 
+
 namespace Unity.FPS.AI
 {
     [RequireComponent(typeof(Health), typeof(Actor), typeof(NavMeshAgent))]
@@ -22,6 +23,9 @@ namespace Unity.FPS.AI
             }
         }
 
+
+        [SerializeField] private IntVariable activeEnemies;
+
         [Header("Parameters")]
         [Tooltip("The Y height at which the enemy will be automatically killed (if it falls off of the level)")]
         public float SelfDestructYHeight = -20f;
@@ -34,7 +38,6 @@ namespace Unity.FPS.AI
 
         [Tooltip("Delay after death where the GameObject is destroyed (to allow for animation)")]
         public float DeathDuration = 0f;
-
 
         [Header("Weapons Parameters")] [Tooltip("Allow weapon swapping for this enemy")]
         public bool SwapToNextWeapon = false;
@@ -96,7 +99,7 @@ namespace Unity.FPS.AI
         RendererIndexData m_EyeRendererData;
         MaterialPropertyBlock m_EyeColorMaterialPropertyBlock;
 
-        public PatrolPath PatrolPath { get; set; }
+        public Vector3 destination = Vector3.zero;
         public GameObject KnownDetectedTarget => DetectionModule.KnownDetectedTarget;
         public bool IsTargetInAttackRange => DetectionModule.IsTargetInAttackRange;
         public bool IsSeeingTarget => DetectionModule.IsSeeingTarget;
@@ -254,48 +257,15 @@ namespace Unity.FPS.AI
             }
         }
 
-        bool IsPathValid()
-        {
-            return PatrolPath && PatrolPath.PathNodes.Count > 0;
-        }
-
         public void ResetPathDestination()
         {
             m_PathDestinationNodeIndex = 0;
         }
 
-        public void SetPathDestinationToClosestNode()
-        {
-            if (IsPathValid())
-            {
-                int closestPathNodeIndex = 0;
-                for (int i = 0; i < PatrolPath.PathNodes.Count; i++)
-                {
-                    float distanceToPathNode = PatrolPath.GetDistanceToNode(transform.position, i);
-                    if (distanceToPathNode < PatrolPath.GetDistanceToNode(transform.position, closestPathNodeIndex))
-                    {
-                        closestPathNodeIndex = i;
-                    }
-                }
-
-                m_PathDestinationNodeIndex = closestPathNodeIndex;
-            }
-            else
-            {
-                m_PathDestinationNodeIndex = 0;
-            }
-        }
-
+       
         public Vector3 GetDestinationOnPath()
         {
-            if (IsPathValid())
-            {
-                return PatrolPath.GetPositionOfPathNode(m_PathDestinationNodeIndex);
-            }
-            else
-            {
-                return transform.position;
-            }
+            return destination;
         }
 
         public void SetNavDestination(Vector3 destination)
@@ -303,29 +273,6 @@ namespace Unity.FPS.AI
             if (NavMeshAgent)
             {
                 NavMeshAgent.SetDestination(destination);
-            }
-        }
-
-        public void UpdatePathDestination(bool inverseOrder = false)
-        {
-            if (IsPathValid())
-            {
-                // Check if reached the path destination
-                if ((transform.position - GetDestinationOnPath()).magnitude <= PathReachingRadius)
-                {
-                    // increment path destination index
-                    m_PathDestinationNodeIndex =
-                        inverseOrder ? (m_PathDestinationNodeIndex - 1) : (m_PathDestinationNodeIndex + 1);
-                    if (m_PathDestinationNodeIndex < 0)
-                    {
-                        m_PathDestinationNodeIndex += PatrolPath.PathNodes.Count;
-                    }
-
-                    if (m_PathDestinationNodeIndex >= PatrolPath.PathNodes.Count)
-                    {
-                        m_PathDestinationNodeIndex -= PatrolPath.PathNodes.Count;
-                    }
-                }
             }
         }
 
@@ -350,6 +297,9 @@ namespace Unity.FPS.AI
 
         void OnDie()
         {
+            activeEnemies.value--;
+
+
             // spawn a particle system when dying
             var vfx = Instantiate(DeathVfx, DeathVfxSpawnPoint.position, Quaternion.identity);
             Destroy(vfx, 5f);

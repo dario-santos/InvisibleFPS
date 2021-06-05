@@ -13,10 +13,6 @@ namespace Unity.FPS.AI
 
         void Start()
         {
-            foreach (var enemy in EnemiesToAssign)
-            {
-                enemy.PatrolPath = this;
-            }
         }
 
         public float GetDistanceToNode(Vector3 origin, int destinationNodeIndex)
