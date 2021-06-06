@@ -33,7 +33,8 @@ Bandeiras aparecem, em lugares pré-definidos, aleatóriamente - para pontuar, u
 
 ### Ondas
 
-Neste modo de jogo os jogadores põe de lado as suas diferenças para protegerem em conjunto uma base de ondas de inimigos. Sem tempo limite, os jogadores defendem a sua base onda após onda de inimigos, sendo que a tarefa fica progressivamente mais difícil!
+Neste modo de jogo os jogadores põe de lado as suas diferenças para protegerem em conjunto uma base de ondas de inimigos: *hoverbots* e, por vezes, o *hoverbot omega* marcham incessantemente até à base dos jogadores, sendo que a sua durabilidade diminiu por um sempre que um inimigo lhe trespassa.
+Assim, sem tempo limite, os jogadores defendem a sua base onda após onda de inimigos, sendo que a tarefa fica progressivamente mais difícil!
 
 ## 🎮 Mecanicas
 
