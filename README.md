@@ -16,8 +16,8 @@ Caso pretenda apenas executar o jogo poderá realizá-lo através do download do
 
 Caso pretenda realizar edições no código fonte terá que:
 
-1 - Proceder à transferência do código fonte na página do [GitHub](https://github.com/dario-santos/InvisibleFPS);
-2 - Transferir e instalar o [Unity 2020.3.2f1](https://store.unity.com/download). Após isso é apenas necessário importar o projeto para o Unity e proceder à sua abertura.
+  1. Proceder à transferência do código fonte na página do [GitHub](https://github.com/dario-santos/InvisibleFPS);
+  2. Transferir e instalar o [Unity 2020.3.2f1](https://store.unity.com/download). Após isso é apenas necessário importar o projeto para o Unity e proceder à sua abertura.
 
 ## 📖 Modos de Jogo
 
