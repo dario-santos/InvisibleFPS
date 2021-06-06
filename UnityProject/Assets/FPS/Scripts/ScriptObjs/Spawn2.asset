@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isActive: 0
   position: {x: 51.8, y: 1.48, z: 299.48}
+  portal: {fileID: 0}

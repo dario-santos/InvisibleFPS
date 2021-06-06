@@ -11,6 +11,8 @@ public class SpawnEnemies : MonoBehaviour
 
     [SerializeField] private List<SpawnInfo> spawns;
 
+    [SerializeField] private List<GameObject> spawnPortals;
+
     [SerializeField] private int timeToStartWave = 5;
 
     [SerializeField] private IntVariable activeEnemies;
@@ -53,11 +55,12 @@ public class SpawnEnemies : MonoBehaviour
             case 40:
             case 45:
 
-                foreach (var s in spawns)
+                for (int i = 0; i < spawns.Count; i++)
                 { 
-                    if (!s.isActive)
+                    if (!spawns[i].isActive)
                     {
-                        s.isActive = true;
+                        spawns[i].isActive = true;
+                        spawnPortals[i].SetActive(true);
                         ++nActiveSpawns;
                         return;
                     }
@@ -83,7 +86,7 @@ public class SpawnEnemies : MonoBehaviour
             {
                 for (int i = 0; i < count; i++)
                 {       
-                    // 2.2 Spawn enemy
+                    // 2.2 - Spawn enemy
                     var newEnemy = Instantiate(enemies[0].enemy, s.position, Quaternion.Euler(0, 0, 0));
                     newEnemy.GetComponent<NavMeshAgent>().SetDestination(destination);
                     newEnemy.GetComponent<EnemyController>().destination = destination;
@@ -91,21 +94,13 @@ public class SpawnEnemies : MonoBehaviour
                     yield return new WaitForSeconds(seconds);
                 }
 
-                // 2.3 Spawn OMEGA enemy in special waves
-                switch (currentWave)
+                // 2.3 - Spawn OMEGA enemy in special waves
+                if (currentWave % 5 == 0)
                 {
-                    case 5:
-                    case 15:
-                    case 25:
-                    case 40:
-                    case 45:
-
-                        // 2.2 Spawn OMEGA enemy
-                        var omega = Instantiate(enemies[1].enemy, s.position, Quaternion.Euler(0, 0, 0));
-                        omega.GetComponent<NavMeshAgent>().SetDestination(destination);
-                        omega.GetComponent<EnemyController>().destination = destination;
-                        
-                        break;
+                    // 2.2 - Spawn OMEGA enemy
+                    var omega = Instantiate(enemies[1].enemy, s.position, Quaternion.Euler(0, 0, 0));
+                    omega.GetComponent<NavMeshAgent>().SetDestination(destination);
+                    omega.GetComponent<EnemyController>().destination = destination;
                 }
             }
         }
@@ -113,23 +108,10 @@ public class SpawnEnemies : MonoBehaviour
 
     public void OnStartWave(int timeToStartWave, int count)
     {
-
-        var additional = 0;
-
-        switch (currentWave)
-        {
-            case 5:
-            case 15:
-            case 25:
-            case 40:
-            case 45:
-
-                additional = nActiveSpawns;
-
-                break;
-        }
-
-        activeEnemies.value+= (count*nActiveSpawns + additional);
+        activeEnemies.value += (count*nActiveSpawns);
+     
+        if (currentWave % 5 == 0)
+            activeEnemies.value += nActiveSpawns;
 
         StartCoroutine(Spwan(timeToStartWave, 0.5f, count, currentWave));
     }
