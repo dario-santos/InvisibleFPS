@@ -15652,6 +15652,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 2b462b26d004f7c4baf51dd7eac71a86, type: 2}
   timeToStartWave: 5
   activeEnemies: {fileID: 11400000, guid: 129f58b4c42fb3249983e05b32f28c0f, type: 2}
+  waveCount: {fileID: 11400000, guid: 1da2f927ff0c8e341a812907fd5b485a, type: 2}
   destination: {x: 150.5, y: 10, z: 250}
   currentWave: 0
 --- !u!1001 &1725067207

@@ -8,12 +8,19 @@ public class BaseManager : MonoBehaviour
     [SerializeField] private IntVariable lives;
     [SerializeField] private IntVariable activeEnemies;
 
+    private bool toAdd = true;
+
     private void OnTriggerEnter(Collider other)
     {
         if (lives.value > 0 && other.CompareTag("Enemy"))
-        { 
-            lives.value--;
-            activeEnemies.value--;
+        {
+            if(toAdd)
+            { 
+                lives.value--;
+                activeEnemies.value--;
+            } 
+            
+            toAdd = !toAdd;
             Destroy(other.gameObject);
         }
     }

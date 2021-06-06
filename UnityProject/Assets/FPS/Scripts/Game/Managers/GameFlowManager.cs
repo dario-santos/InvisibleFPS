@@ -40,7 +40,7 @@ namespace Unity.FPS.Game
                     GameIsEnding = true;
 
                     // 1.2 - Load scoreboard scene
-                    SceneManager.LoadScene("WavesEndGame");
+                    SceneManager.LoadScene("EndGameWaves");
                 }
             }
             else
