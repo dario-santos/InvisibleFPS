@@ -54,7 +54,7 @@ public class PickUpFlag : MonoBehaviour
                 flagManager.SpawnFlag();
                 flag.SetActive(false);
             }
-            else if (other.CompareTag("BaseYellow") && color.Equals("yelllow"))
+            else if (other.CompareTag("BaseYellow") && color.Equals("yellow"))
             {
                 player.flags++;
                 carriesFlag = false;
