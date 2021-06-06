@@ -15,6 +15,8 @@ public class SpawnEnemies : MonoBehaviour
 
     [SerializeField] private IntVariable activeEnemies;
 
+    [SerializeField] private IntVariable waveCount;
+
     [SerializeField] private Vector3 destination = new Vector3(150.5f, 10, 250);
 
     public int currentWave = 0;
@@ -31,7 +33,9 @@ public class SpawnEnemies : MonoBehaviour
         if (activeEnemies.value <= 0)
         { 
             currentWave++;
-          
+
+            waveCount.value = currentWave;
+
             UpdateActiveSpawns(currentWave);
 
             OnStartWave(timeToStartWave, GetEnemyCount(currentWave));

@@ -18,12 +18,25 @@ public class LiveScoreBoard : MonoBehaviour
             return;
 
         // 1 - Sort list
-        playerInfos.Sort(delegate (PlayerInfo x, PlayerInfo y)
-        {
-            int v = -x.kills.CompareTo(y.kills);
 
-            return v != 0 ? v : x.deaths.CompareTo(y.deaths);
-        });
+        if (!isCTF)
+        {
+            playerInfos.Sort(delegate (PlayerInfo x, PlayerInfo y)
+            {
+                int v = -x.kills.CompareTo(y.kills);
+
+                return v != 0 ? v : x.deaths.CompareTo(y.deaths);
+            });
+        }
+        else 
+        {
+            playerInfos.Sort(delegate (PlayerInfo x, PlayerInfo y)
+            {
+                int v = -x.flags.CompareTo(y.flags);
+
+                return v != 0 ? v : -x.kills.CompareTo(y.kills);
+            });
+        }
     }
 
     private void Update()
