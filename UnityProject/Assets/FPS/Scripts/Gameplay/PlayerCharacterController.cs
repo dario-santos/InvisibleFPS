@@ -146,8 +146,6 @@ namespace Unity.FPS.Gameplay
         const float k_JumpGroundingPreventionTime = 0.2f;
         const float k_GroundCheckDistanceInAir = 0.07f;
 
-        private Vector3 initialPosition;
-
         void Awake()
         {
             ActorsManager actorsManager = FindObjectOfType<ActorsManager>();
@@ -157,7 +155,6 @@ namespace Unity.FPS.Gameplay
 
         void Start()
         {
-            initialPosition = transform.position;
 
             // fetch components on the same gameObject
             m_Controller = GetComponent<CharacterController>();
@@ -243,8 +240,6 @@ namespace Unity.FPS.Gameplay
         void OnRevive()
         {
             IsDead = false;
-
-            transform.position = initialPosition;
 
             m_WeaponsManager.SwitchToWeaponIndex(0, true);
         }

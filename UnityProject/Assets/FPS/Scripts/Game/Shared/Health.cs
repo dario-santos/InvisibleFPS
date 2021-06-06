@@ -22,18 +22,26 @@ namespace Unity.FPS.Game
         
         bool m_IsDead;
 
+
+        private Vector3 initialPosition;
+
         private IEnumerator Revive(int seconds)
         {
             yield return new WaitForSeconds(seconds);
-
+            
             OnRevive?.Invoke();
 
+            transform.localPosition = initialPosition;
+
             CurrentHealth = MaxHealth;
+
             m_IsDead = false;
         }
 
         void Start()
         {
+            initialPosition = transform.position;
+
             CurrentHealth = MaxHealth;
         }
 
@@ -107,11 +115,18 @@ namespace Unity.FPS.Game
             { 
                 m_IsDead = true;
                 OnDie?.Invoke();
+
                 StartCoroutine(Revive(5));
 
                 if(damageSource != null && damageSource != this.gameObject)
                     damageSource.GetComponent<PlayerContainer>().player.kills++;
             }
+        }
+
+        private void OnCollisionEnter(Collision collision)
+        {
+            if (collision.gameObject.CompareTag("DeathZone"))
+                HandleDeath(null);
 
         }
     }

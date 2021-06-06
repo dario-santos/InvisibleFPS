@@ -334,7 +334,7 @@ MonoBehaviour:
   - {fileID: 751973185}
   - {fileID: 1320602100}
   playerDeaths:
-  - {fileID: 1642904972}
+  - {fileID: 1201124268}
   - {fileID: 1735495317}
   - {fileID: 1394063297}
   - {fileID: 1642904972}
@@ -534,8 +534,8 @@ RectTransform:
   - {fileID: 2054045490}
   - {fileID: 1634551871}
   - {fileID: 489866388}
-  - {fileID: 1539221225}
   - {fileID: 1388205349}
+  - {fileID: 1539221225}
   m_Father: {fileID: 276836202}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -617,7 +617,7 @@ GameObject:
   - component: {fileID: 489866390}
   - component: {fileID: 489866389}
   m_Layer: 5
-  m_Name: Kills
+  m_Name: Deaths
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -866,7 +866,7 @@ GameObject:
   - component: {fileID: 751973184}
   - component: {fileID: 751973185}
   m_Layer: 5
-  m_Name: Flags
+  m_Name: Kills3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -945,7 +945,7 @@ GameObject:
   - component: {fileID: 784479645}
   - component: {fileID: 784479646}
   m_Layer: 5
-  m_Name: Flags
+  m_Name: Kills2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1180,7 +1180,7 @@ GameObject:
   - component: {fileID: 1201124269}
   - component: {fileID: 1201124268}
   m_Layer: 5
-  m_Name: Kills
+  m_Name: Deaths1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1259,7 +1259,7 @@ GameObject:
   - component: {fileID: 1320602099}
   - component: {fileID: 1320602100}
   m_Layer: 5
-  m_Name: Flags
+  m_Name: Kills4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1338,7 +1338,7 @@ GameObject:
   - component: {fileID: 1388205351}
   - component: {fileID: 1388205350}
   m_Layer: 5
-  m_Name: Flags (1)
+  m_Name: Kills
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1356,7 +1356,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 473837759}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -1417,7 +1417,7 @@ GameObject:
   - component: {fileID: 1394063296}
   - component: {fileID: 1394063297}
   m_Layer: 5
-  m_Name: Kills
+  m_Name: Deaths3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1515,7 +1515,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 473837759}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1628,7 +1628,7 @@ GameObject:
   - component: {fileID: 1559392290}
   - component: {fileID: 1559392291}
   m_Layer: 5
-  m_Name: Flags
+  m_Name: Kills1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1786,7 +1786,7 @@ GameObject:
   - component: {fileID: 1642904971}
   - component: {fileID: 1642904972}
   m_Layer: 5
-  m_Name: Kills
+  m_Name: Deaths4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1865,7 +1865,7 @@ GameObject:
   - component: {fileID: 1735495316}
   - component: {fileID: 1735495317}
   m_Layer: 5
-  m_Name: Kills
+  m_Name: Deaths2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

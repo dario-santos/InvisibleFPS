@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerIndex: 1
   isActive: 0
-  kills: 0
-  deaths: 0
+  kills: 1
+  deaths: 5
+  flags: 0
   color: {r: 0.32941177, g: 0.3882353, b: 1, a: 1}

@@ -10,6 +10,7 @@ TagManager:
   - BaseYellow
   - BaseGreen
   - Enemy
+  - DeathZone
   layers:
   - Default
   - TransparentFX

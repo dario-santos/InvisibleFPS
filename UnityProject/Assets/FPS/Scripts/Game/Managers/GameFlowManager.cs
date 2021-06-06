@@ -23,7 +23,9 @@ namespace Unity.FPS.Game
 
         void Start()
         {
-            baseLives.value = baseInitialLives;
+            if (isWave)
+                baseLives.value = baseInitialLives;
+
             LoseSceneName = LoseSceneName + (isCTF ? "CTF" : "FFA");
             AudioUtility.SetMasterVolume(1);
         }

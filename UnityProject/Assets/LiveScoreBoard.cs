@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -21,7 +20,9 @@ public class LiveScoreBoard : MonoBehaviour
         // 1 - Sort list
         playerInfos.Sort(delegate (PlayerInfo x, PlayerInfo y)
         {
-            return -x.kills.CompareTo(y.kills);
+            int v = -x.kills.CompareTo(y.kills);
+
+            return v != 0 ? v : x.deaths.CompareTo(y.deaths);
         });
     }
 
