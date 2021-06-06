@@ -23,9 +23,17 @@ Caso pretenda realizar edições no código fonte terá que:
 
 O jogo desenvolvido possui três modos distintos de jogo até quatro jogadores cada.
 
-1 - Todos contra todos: Uma luta frenetica sem alianças entre os jogadores, o que obtiver o maior número de *kills* é coroado vencedor;
-2 - Capturar Bandeira: Semelhante ao primeiro, mas agora o objetivo principal é capturar o maior número de bandeiras antes que o tempo termine;
-3 - Ondas: Neste modo de jogo os jogadores põe de lado as suas diferenças para protegerem conjunto uma base de ondas de inimigos.
+### Todos contra todos
+
+Um modo de jogo que apela a luta frenética sem alianças entre os jogadores. Após passados cinco minutos, o jogador que tiver acumulado mais *kills* é coroado vencedor.
+
+### Capturar Bandeira
+
+Bandeiras aparecem, em lugares pré-definidos, aleatóriamente - para pontuar, um jogador terá que ir ao seu encontro a trazê-la até à sua base, porém, um jogador que esteja na posse desta, far-se-á um alvo fácil! Após cinco minutos, o jogador tiver acumulado mais bandeiras, é coroado o vencedor.
+
+### Ondas
+
+Neste modo de jogo os jogadores põe de lado as suas diferenças para protegerem em conjunto uma base de ondas de inimigos. Sem tempo limite, os jogadores defendem a sua base onda após onda de inimigos, sendo que a tarefa fica progressivamente mais difícil!
 
 ## 🎮 Mecanicas
 
@@ -56,10 +64,10 @@ A figura abaixo demonstra o fluxo do jogo entre as diferentes cenas desenvolvida
 
 Para este trabalho foram utilizados diversos mecanismos oferecidos pelo motor de jogo Unity. Especificando ferramentas como:
 
- - NavMesh - Para pathfinding;
- - ScriptableObjects - Objetos de código independentes às cenas utilizados para se removerem dependências entre módulos;
- - *RenderToTexture* - Renderização da visão de uma camera para uma textura;
- - Unity Input System V2 - O novo sistema de *input* do Unity ainda em fase beta.
+- NavMesh - Para pathfinding;
+- ScriptableObjects - Objetos de código independentes às cenas utilizados para se removerem dependências entre módulos;
+- *RenderToTexture* - Renderização da visão de uma camera para uma textura;
+- Unity Input System V2 - O novo sistema de *input* do Unity ainda em fase beta.
 
 ## ❤️ Agradecimentos
 
