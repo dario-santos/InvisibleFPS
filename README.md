@@ -4,7 +4,7 @@
 </h1>
 
 
-<p align="center"> Um jogo FPS splitscreen desenvolvido em Unity 2020.3.2f1 para a unidade curricular de <a href="www.di.ubi.pt/~agomes/cgjd/">Computação Gráfica em Jogos Digitais</a>.</p>
+<p align="center"> Um jogo FPS splitscreen desenvolvido em Unity 2020.3.2f1 para a unidade curricular de <a href="www.di.ubi.pt/~agomes/cgjd/">Computação Gráfica em Jogos Digitais</a>.Desenvolvido com o novo sistema de Input, Pathfinding e ScriptableObjects.</p>
 
 <p align="center">
 <img src="https://img.shields.io/badge/version-v1.0-blue?style=for-the-badge&logo=none"/>&nbsp; <img src="https://img.shields.io/badge/Made%20with-Unity-57b9d3.svg?style=for-the-badge&logo=unity"/>&nbsp; <img src="https://img.shields.io/badge/License-GPLv3-red.svg?style=for-the-badge&logo=none"/></p>
